@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bashua Front End - Unique Modern Professional Functional Websites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --marble-white: #F8F6F4;
+            --marble-cream: #EDE9E4;
+            --marble-grey: #C9C5BF;
+            --marble-dark: #8B8680;
+            --marble-charcoal: #4A4743;
+            --marble-black: #2B2926;
+            --marble-gold: #B8956A;
+            --marble-gold-light: #D4B88A;
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--marble-white) 0%, var(--marble-cream) 100%);
+            color: var(--marble-charcoal);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Marble texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(184, 149, 106, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(139, 134, 128, 0.04) 0%, transparent 50%),
+                linear-gradient(90deg, transparent 0%, rgba(201, 197, 191, 0.02) 50%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: rgba(248, 246, 244, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(184, 149, 106, 0.2);
+            z-index: 1000;
+            transition: all 0.3s var(--transition-smooth);
+        }
+
+        nav.scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(43, 41, 38, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--marble-charcoal);
+            text-decoration: none;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--marble-gold), var(--marble-gold-light));
+            transition: width 0.3s var(--transition-smooth);
+        }
+
+        .logo:hover::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--marble-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--marble-gold);
+            transition: width 0.3s var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--marble-charcoal);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
+            color: var(--marble-white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s var(--transition-smooth);
+            box-shadow: 0 4px 15px rgba(184, 149, 106, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(184, 149, 106, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 3rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(184, 149, 106, 0.08) 0%, transparent 70%);
+            animation: floatMarble 20s infinite ease-in-out;
+        }
+
+        @keyframes floatMarble {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-50px, 50px) rotate(5deg); }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            color: var(--marble-charcoal);
+            margin-bottom: 1.5rem;
+            animation: slideInLeft 1s var(--transition-smooth);
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            color: var(--marble-dark);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            animation: slideInLeft 1s 0.2s var(--transition-smooth) backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: slideInLeft 1s 0.4s var(--transition-smooth) backwards;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, var(--marble-charcoal), var(--marble-black));
+            color: var(--marble-white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s var(--transition-smooth);
+            box-shadow: 0 6px 20px rgba(43, 41, 38, 0.3);
+            border: 2px solid transparent;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(43, 41, 38, 0.4);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: var(--marble-charcoal);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s var(--transition-smooth);
+            border: 2px solid var(--marble-gold);
+        }
+
+        .secondary-btn:hover {
+            background: var(--marble-gold);
+            color: var(--marble-white);
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: slideInRight 1s var(--transition-smooth);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .marble-card {
+            background: linear-gradient(135deg, rgba(248, 246, 244, 0.9), rgba(237, 233, 228, 0.9));
+            border: 1px solid rgba(184, 149, 106, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(43, 41, 38, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marble-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(184, 149, 106, 0.1), transparent);
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 3rem;
+            background: linear-gradient(180deg, transparent 0%, rgba(237, 233, 228, 0.3) 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--marble-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            color: var(--marble-charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--marble-dark);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: rgba(248, 246, 244, 0.6);
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 15px;
+            padding: 2.5rem;
+            transition: all 0.4s var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(184, 149, 106, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(43, 41, 38, 0.15);
+            border-color: var(--marble-gold);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: var(--marble-charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--marble-dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            color: var(--marble-gold);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s var(--transition-smooth);
+        }
+
+        .service-link:hover {
+            gap: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 3rem;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--marble-cream), var(--marble-grey));
+            border-radius: 20px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: 'BASHUA';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 6rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: rgba(184, 149, 106, 0.1);
+            letter-spacing: 10px;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            color: var(--marble-charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--marble-dark);
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-check {
+            width: 30px;
+            height: 30px;
+            background: var(--marble-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 3rem;
+            background: linear-gradient(180deg, rgba(237, 233, 228, 0.3) 0%, transparent 100%);
+        }
+
+        .portfolio-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .portfolio-card {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--marble-cream), var(--marble-grey));
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(43, 41, 38, 0.95), transparent);
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.4s var(--transition-smooth);
+        }
+
+        .portfolio-card:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-card h3 {
+            color: var(--marble-white);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-card p {
+            color: var(--marble-cream);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 3rem;
+        }
+
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: rgba(248, 246, 244, 0.8);
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 15px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--marble-gold);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: var(--marble-dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--marble-charcoal);
+        }
+
+        .testimonial-role {
+            color: var(--marble-gold);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 3rem;
+            background: linear-gradient(135deg, var(--marble-charcoal), var(--marble-black));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(184, 149, 106, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(184, 149, 106, 0.1) 0%, transparent 50%);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            color: var(--marble-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            color: var(--marble-cream);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-section .cta-button {
+            font-size: 1.1rem;
+            padding: 1.2rem 3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--marble-black);
+            color: var(--marble-cream);
+            padding: 4rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--marble-gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h4 {
+            color: var(--marble-gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--marble-cream);
+            text-decoration: none;
+            transition: color 0.3s var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--marble-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(184, 149, 106, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--marble-grey);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">BASHUA</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" class="cta-button">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Do You Need a<br><span>Unique</span> <span>Modern</span><br><span>Professional</span><br><span>Functional</span><br>Website?</h1>
+                <p>We create custom websites that don't just look beautiful—they work hard to grow your business and turn visitors into customers.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="primary-btn">Get Started</a>
+                    <a href="#services" class="secondary-btn">View Services</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="marble-card">
+                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--marble-charcoal);">What You Get</h3>
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--marble-gold);">✓</div>
+                            <div style="color: var(--marble-dark); font-size: 1.1rem; font-weight: 600;">Custom Design</div>
+                            <div style="color: var(--marble-grey); font-size: 0.9rem;">Built just for you</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--marble-gold);">✓</div>
+                            <div style="color: var(--marble-dark); font-size: 1.1rem; font-weight: 600;">Mobile Friendly</div>
+                            <div style="color: var(--marble-grey); font-size: 0.9rem;">Looks great everywhere</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--marble-gold);">✓</div>
+                            <div style="color: var(--marble-dark); font-size: 1.1rem; font-weight: 600;">Gets Results</div>
+                            <div style="color: var(--marble-grey); font-size: 0.9rem;">Turns visitors into customers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <div class="section-subtitle">What We Do</div>
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-description">Everything you need to get your business online and growing.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Web Development</h3>
+                <p>We build custom websites that are beautiful, fast, and easy to manage. Your website will look professional and work perfectly on all devices.</p>
+                <a href="#" class="service-link">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Turn Your Website Into Revenue</h3>
+                <p>Already have a website but it's not bringing in customers? We optimize your existing site to convert more visitors into paying customers.</p>
+                <a href="#" class="service-link">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Marketing</h3>
+                <p>Get found online with our marketing services. We help your business reach more customers and grow through digital marketing strategies.</p>
+                <a href="#" class="service-link">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Logo and Branding Design</h3>
+                <p>Create a memorable brand identity with custom logos and branding that captures what makes your business special and stands out.</p>
+                <a href="#" class="service-link">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image"></div>
+            <div class="about-content">
+                <div class="section-subtitle">About Bashua</div>
+                <h2>Creative Design & Development</h2>
+                <p>We're a web development team that creates custom-built, functional, and attractive websites to meet your unique business needs.</p>
+                <p>Whether you need a brand new website or want to improve the one you have, we make sure your online presence works hard to grow your business.</p>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-check">✓</div>
+                        <span>Easy to Manage</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-check">✓</div>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-check">✓</div>
+                        <span>Highly Professional</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-check">✓</div>
+                        <span>Responsive Designs</span>
+                    </div>
+                </div>
+                <a href="#contact" class="primary-btn">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-header">
+            <div class="section-subtitle">Our Work</div>
+            <h2 class="section-title">Our Portfolio</h2>
+            <p class="section-description">From stunning websites to impactful branding, see what we can create for you.</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-overlay">
+                    <h3>E-Commerce Store</h3>
+                    <p>Built a modern online store that made it easy for customers to browse and buy products, increasing sales significantly.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-overlay">
+                    <h3>Business Website</h3>
+                    <p>Created a professional website that helped this local business attract more customers and establish credibility online.</p>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-overlay">
+                    <h3>Service Provider</h3>
+                    <p>Designed a clean, easy-to-navigate website that made booking appointments simple and boosted customer inquiries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <div class="section-subtitle">Testimonials</div>
+            <h2 class="section-title">What Clients Say</h2>
+        </div>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">Bashua built us a beautiful website that our customers love. We're getting more inquiries than ever before!</p>
+                <div class="testimonial-author">Sarah Chen</div>
+                <div class="testimonial-role">Owner, Local Boutique</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">They made the whole process so easy. Our new website looks professional and actually brings in new customers.</p>
+                <div class="testimonial-author">Michael Roberts</div>
+                <div class="testimonial-role">Director, Home Services Co.</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">Best investment we made for our business. The website pays for itself with all the new leads we're getting.</p>
+                <div class="testimonial-author">Jennifer Martinez</div>
+                <div class="testimonial-role">Founder, Consulting Firm</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-content">
+            <h2>Let's Get Started On Your Project</h2>
+            <p>Ready to get a website that looks great and brings in customers?</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">BASHUA</div>
+                <p style="margin-top: 1rem; line-height: 1.8;">We create beautiful, functional websites that help your business grow and succeed online.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Website Revenue</a></li>
+                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">Branding</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:hello@bashua.com">hello@bashua.com</a></li>
+                    <li><a href="tel:+44">+44 (0) XXX XXXX</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Bashua Front End. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.querySelectorAll('.service-card, .portfolio-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
