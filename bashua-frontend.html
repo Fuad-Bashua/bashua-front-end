@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bashua Front End - Unique Modern Professional Functional Websites</title>
+    <title>Bashua — Web Development & Software Consulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,11 +20,7 @@
             --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -40,15 +36,12 @@
             letter-spacing: 0.5px;
         }
 
-        /* Marble texture overlay */
         body::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
                 radial-gradient(circle at 20% 30%, rgba(184, 149, 106, 0.03) 0%, transparent 50%),
                 radial-gradient(circle at 80% 70%, rgba(139, 134, 128, 0.04) 0%, transparent 50%),
                 linear-gradient(90deg, transparent 0%, rgba(201, 197, 191, 0.02) 50%, transparent 100%);
@@ -56,16 +49,11 @@
             z-index: 1;
         }
 
-        .container {
-            position: relative;
-            z-index: 2;
-        }
+        .container { position: relative; z-index: 2; }
 
-        /* Navigation */
+        /* ─── NAV ─── */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
+            position: fixed; top: 0; width: 100%;
             padding: 1.5rem 0;
             background: rgba(248, 246, 244, 0.95);
             backdrop-filter: blur(10px);
@@ -73,205 +61,132 @@
             z-index: 1000;
             transition: all 0.3s var(--transition-smooth);
         }
-
         nav.scrolled {
             padding: 1rem 0;
             box-shadow: 0 4px 20px rgba(43, 41, 38, 0.1);
         }
-
         .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1400px; margin: 0 auto; padding: 0 3rem;
+            display: flex; justify-content: space-between; align-items: center;
         }
-
         .logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2rem; font-weight: 700;
             color: var(--marble-charcoal);
-            text-decoration: none;
-            letter-spacing: 1px;
+            text-decoration: none; letter-spacing: 1px;
             position: relative;
         }
-
         .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
+            content: ''; position: absolute; bottom: -5px; left: 0;
+            width: 0; height: 2px;
             background: linear-gradient(90deg, var(--marble-gold), var(--marble-gold-light));
             transition: width 0.3s var(--transition-smooth);
         }
-
-        .logo:hover::after {
-            width: 100%;
-        }
+        .logo:hover::after { width: 100%; }
 
         .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-            align-items: center;
+            display: flex; list-style: none; gap: 2.5rem; align-items: center;
         }
-
         .nav-links a {
-            color: var(--marble-dark);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
+            color: var(--marble-dark); text-decoration: none;
+            font-weight: 500; font-size: 0.9rem; letter-spacing: 0.5px;
             transition: color 0.3s var(--transition-smooth);
             position: relative;
         }
-
         .nav-links a::before {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
+            content: ''; position: absolute; bottom: -5px; left: 50%;
+            transform: translateX(-50%); width: 0; height: 2px;
             background: var(--marble-gold);
             transition: width 0.3s var(--transition-smooth);
         }
-
-        .nav-links a:hover {
-            color: var(--marble-charcoal);
-        }
-
-        .nav-links a:hover::before {
-            width: 100%;
-        }
+        .nav-links a:hover { color: var(--marble-charcoal); }
+        .nav-links a:hover::before { width: 100%; }
 
         .cta-button {
             background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
-            color: var(--marble-white);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+            color: var(--marble-white); padding: 0.8rem 2rem;
+            border-radius: 50px; text-decoration: none; font-weight: 600;
             transition: all 0.3s var(--transition-smooth);
             box-shadow: 0 4px 15px rgba(184, 149, 106, 0.3);
         }
-
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(184, 149, 106, 0.4);
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 3rem 4rem;
-            position: relative;
-            overflow: hidden;
+        /* Mobile menu */
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .mobile-toggle span {
+            display: block; width: 25px; height: 2px;
+            background: var(--marble-charcoal); margin: 5px 0;
+            transition: all 0.3s var(--transition-smooth);
         }
 
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            padding: 8rem 3rem 4rem; position: relative; overflow: hidden;
+        }
         .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 80%;
-            height: 150%;
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 80%; height: 150%;
             background: radial-gradient(circle, rgba(184, 149, 106, 0.08) 0%, transparent 70%);
             animation: floatMarble 20s infinite ease-in-out;
         }
-
         @keyframes floatMarble {
             0%, 100% { transform: translate(0, 0) rotate(0deg); }
             50% { transform: translate(-50px, 50px) rotate(5deg); }
         }
 
         .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center;
         }
-
         .hero-text h1 {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            color: var(--marble-charcoal);
-            margin-bottom: 1.5rem;
+            font-size: 4.2rem; line-height: 1.1;
+            color: var(--marble-charcoal); margin-bottom: 1.5rem;
             animation: slideInLeft 1s var(--transition-smooth);
         }
-
         .hero-text h1 span {
             background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
-
         .hero-text p {
-            font-size: 1.3rem;
-            color: var(--marble-dark);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
+            font-size: 1.2rem; color: var(--marble-dark);
+            margin-bottom: 2.5rem; line-height: 1.8;
             animation: slideInLeft 1s 0.2s var(--transition-smooth) backwards;
         }
-
         .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
+            display: flex; gap: 1.5rem;
             animation: slideInLeft 1s 0.4s var(--transition-smooth) backwards;
         }
-
         .primary-btn {
             background: linear-gradient(135deg, var(--marble-charcoal), var(--marble-black));
-            color: var(--marble-white);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+            color: var(--marble-white); padding: 1rem 2.5rem;
+            border-radius: 50px; text-decoration: none; font-weight: 600;
             transition: all 0.3s var(--transition-smooth);
             box-shadow: 0 6px 20px rgba(43, 41, 38, 0.3);
             border: 2px solid transparent;
         }
-
         .primary-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 30px rgba(43, 41, 38, 0.4);
         }
-
         .secondary-btn {
-            background: transparent;
-            color: var(--marble-charcoal);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+            background: transparent; color: var(--marble-charcoal);
+            padding: 1rem 2.5rem; border-radius: 50px;
+            text-decoration: none; font-weight: 600;
             transition: all 0.3s var(--transition-smooth);
             border: 2px solid var(--marble-gold);
         }
-
         .secondary-btn:hover {
-            background: var(--marble-gold);
-            color: var(--marble-white);
+            background: var(--marble-gold); color: var(--marble-white);
             transform: translateY(-3px);
         }
 
@@ -279,520 +194,481 @@
             position: relative;
             animation: slideInRight 1s var(--transition-smooth);
         }
-
         @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
-
         .marble-card {
             background: linear-gradient(135deg, rgba(248, 246, 244, 0.9), rgba(237, 233, 228, 0.9));
             border: 1px solid rgba(184, 149, 106, 0.3);
-            border-radius: 20px;
-            padding: 3rem;
+            border-radius: 20px; padding: 2.5rem;
             box-shadow: 0 10px 40px rgba(43, 41, 38, 0.1);
             backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
-
         .marble-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 200px;
+            content: ''; position: absolute; top: 0; right: 0;
+            width: 200px; height: 200px;
             background: radial-gradient(circle, rgba(184, 149, 106, 0.1), transparent);
             animation: pulse 3s infinite;
         }
-
         @keyframes pulse {
             0%, 100% { opacity: 0.5; transform: scale(1); }
             50% { opacity: 0.8; transform: scale(1.1); }
         }
 
-        /* Services Section */
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .stat-item { text-align: center; padding: 1rem; }
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem; font-weight: 700;
+            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; line-height: 1.2;
+        }
+        .stat-label { font-size: 0.85rem; color: var(--marble-dark); font-weight: 500; margin-top: 0.3rem; }
+
+        /* ─── SHARED SECTION STYLES ─── */
+        .section-header {
+            text-align: center; max-width: 800px; margin: 0 auto 4rem;
+        }
+        .section-subtitle {
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px;
+            color: var(--marble-gold); font-weight: 600; margin-bottom: 1rem;
+        }
+        .section-title {
+            font-size: 3.2rem; color: var(--marble-charcoal); margin-bottom: 1.5rem;
+        }
+        .section-description {
+            font-size: 1.15rem; color: var(--marble-dark); line-height: 1.8;
+        }
+
+        /* ─── SERVICES ─── */
         .services {
             padding: 6rem 3rem;
             background: linear-gradient(180deg, transparent 0%, rgba(237, 233, 228, 0.3) 100%);
         }
-
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-subtitle {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--marble-gold);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: 3.5rem;
-            color: var(--marble-charcoal);
-            margin-bottom: 1.5rem;
-        }
-
-        .section-description {
-            font-size: 1.2rem;
-            color: var(--marble-dark);
-            line-height: 1.8;
-        }
-
         .services-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
         }
-
         .service-card {
             background: rgba(248, 246, 244, 0.6);
             border: 1px solid rgba(184, 149, 106, 0.2);
-            border-radius: 15px;
-            padding: 2.5rem;
+            border-radius: 15px; padding: 2.5rem;
             transition: all 0.4s var(--transition-smooth);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            cursor: pointer; position: relative; overflow: hidden;
         }
-
         .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(184, 149, 106, 0.1), transparent);
             transition: left 0.5s;
         }
-
-        .service-card:hover::before {
-            left: 100%;
-        }
-
+        .service-card:hover::before { left: 100%; }
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(43, 41, 38, 0.15);
             border-color: var(--marble-gold);
         }
-
         .service-icon {
-            width: 70px;
-            height: 70px;
+            width: 65px; height: 65px;
             background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.5rem; font-size: 1.8rem;
         }
-
         .service-card h3 {
-            font-size: 1.8rem;
-            color: var(--marble-charcoal);
-            margin-bottom: 1rem;
+            font-size: 1.6rem; color: var(--marble-charcoal); margin-bottom: 0.8rem;
         }
-
         .service-card p {
-            color: var(--marble-dark);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+            color: var(--marble-dark); line-height: 1.8; margin-bottom: 1.2rem; font-size: 0.95rem;
         }
-
         .service-link {
-            color: var(--marble-gold);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s var(--transition-smooth);
+            color: var(--marble-gold); text-decoration: none; font-weight: 600;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            transition: gap 0.3s var(--transition-smooth); font-size: 0.95rem;
         }
+        .service-link:hover { gap: 1rem; }
 
-        .service-link:hover {
-            gap: 1rem;
+        /* ─── PROCESS ─── */
+        .process { padding: 6rem 3rem; }
+        .process-timeline {
+            max-width: 900px; margin: 0 auto; position: relative;
         }
-
-        /* About Section */
-        .about {
-            padding: 6rem 3rem;
+        .process-timeline::before {
+            content: ''; position: absolute;
+            left: 40px; top: 0; bottom: 0; width: 2px;
+            background: linear-gradient(180deg, var(--marble-gold), var(--marble-gold-light), var(--marble-cream));
         }
-
-        .about-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        .process-step {
+            display: flex; gap: 2.5rem; margin-bottom: 3rem;
+            position: relative; align-items: flex-start;
         }
-
-        .about-image {
-            background: linear-gradient(135deg, var(--marble-cream), var(--marble-grey));
-            border-radius: 20px;
-            height: 500px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-image::before {
-            content: 'BASHUA';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 6rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            color: rgba(184, 149, 106, 0.1);
-            letter-spacing: 10px;
-        }
-
-        .about-content h2 {
-            font-size: 3rem;
-            color: var(--marble-charcoal);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content p {
-            font-size: 1.1rem;
-            color: var(--marble-dark);
-            line-height: 1.9;
-            margin-bottom: 2rem;
-        }
-
-        .features-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .feature-check {
-            width: 30px;
-            height: 30px;
-            background: var(--marble-gold);
+        .process-number {
+            width: 80px; height: 80px; min-width: 80px;
+            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem; font-weight: 700; color: white;
+            box-shadow: 0 4px 15px rgba(184, 149, 106, 0.4);
+            position: relative; z-index: 2;
+        }
+        .process-content {
+            background: rgba(248, 246, 244, 0.6);
+            border: 1px solid rgba(184, 149, 106, 0.15);
+            border-radius: 15px; padding: 2rem;
+            flex: 1;
+            transition: all 0.3s var(--transition-smooth);
+        }
+        .process-content:hover {
+            border-color: var(--marble-gold);
+            box-shadow: 0 8px 25px rgba(43, 41, 38, 0.08);
+        }
+        .process-content h3 {
+            font-size: 1.5rem; color: var(--marble-charcoal); margin-bottom: 0.5rem;
+        }
+        .process-content p {
+            color: var(--marble-dark); line-height: 1.8; font-size: 0.95rem;
         }
 
-        /* Portfolio Section */
-        .portfolio {
+        /* ─── CASE STUDIES ─── */
+        .case-studies {
             padding: 6rem 3rem;
             background: linear-gradient(180deg, rgba(237, 233, 228, 0.3) 0%, transparent 100%);
         }
-
-        .portfolio-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2.5rem;
+        .cases-grid {
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
         }
-
-        .portfolio-card {
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            height: 400px;
-            cursor: pointer;
+        .case-card {
+            background: rgba(248, 246, 244, 0.7);
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 15px; overflow: hidden;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(43, 41, 38, 0.12);
+        }
+        .case-image {
+            height: 200px; position: relative;
             background: linear-gradient(135deg, var(--marble-cream), var(--marble-grey));
+            display: flex; align-items: center; justify-content: center;
+        }
+        .case-tag {
+            position: absolute; top: 1rem; left: 1rem;
+            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
+            color: white; padding: 0.3rem 1rem;
+            border-radius: 50px; font-size: 0.75rem;
+            font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+        }
+        .case-image-icon {
+            font-size: 3.5rem; opacity: 0.3;
+        }
+        .case-body { padding: 2rem; }
+        .case-body h3 {
+            font-size: 1.5rem; color: var(--marble-charcoal); margin-bottom: 0.8rem;
+        }
+        .case-body p {
+            color: var(--marble-dark); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem;
+        }
+        .case-metrics {
+            display: flex; gap: 1.5rem;
+            border-top: 1px solid rgba(184, 149, 106, 0.15);
+            padding-top: 1.2rem;
+        }
+        .metric { text-align: center; flex: 1; }
+        .metric-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem; font-weight: 700; color: var(--marble-gold);
+        }
+        .metric-label { font-size: 0.75rem; color: var(--marble-dark); font-weight: 500; }
+
+        /* ─── BENEFITS ─── */
+        .benefits { padding: 6rem 3rem; }
+        .benefits-grid {
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+        }
+        .benefit-card {
+            background: rgba(248, 246, 244, 0.5);
+            border: 1px solid rgba(184, 149, 106, 0.15);
+            border-radius: 15px; padding: 2rem;
+            text-align: center;
+            transition: all 0.4s var(--transition-smooth);
+        }
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(43, 41, 38, 0.1);
+            border-color: var(--marble-gold);
+        }
+        .benefit-icon {
+            width: 60px; height: 60px; margin: 0 auto 1.2rem;
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.15), rgba(212, 184, 138, 0.15));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+        }
+        .benefit-card h3 {
+            font-size: 1.3rem; color: var(--marble-charcoal); margin-bottom: 0.5rem;
+        }
+        .benefit-card p {
+            color: var(--marble-dark); font-size: 0.9rem; line-height: 1.7;
         }
 
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(43, 41, 38, 0.95), transparent);
-            padding: 2rem;
-            transform: translateY(100%);
-            transition: transform 0.4s var(--transition-smooth);
+        /* ─── ABOUT ─── */
+        .about { padding: 6rem 3rem; }
+        .about-container {
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center;
+        }
+        .about-image {
+            background: linear-gradient(135deg, var(--marble-cream), var(--marble-grey));
+            border-radius: 20px; height: 550px;
+            position: relative; overflow: hidden;
+        }
+        .about-image::before {
+            content: 'BASHUA'; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem; font-family: 'Cormorant Garamond', serif;
+            font-weight: 700; color: rgba(184, 149, 106, 0.1);
+            letter-spacing: 10px;
+        }
+        .about-content h2 {
+            font-size: 2.8rem; color: var(--marble-charcoal); margin-bottom: 1.5rem;
+        }
+        .about-content p {
+            font-size: 1.05rem; color: var(--marble-dark); line-height: 1.9; margin-bottom: 1.5rem;
         }
 
-        .portfolio-card:hover .portfolio-overlay {
-            transform: translateY(0);
+        .values-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2rem 0;
         }
-
-        .portfolio-card h3 {
-            color: var(--marble-white);
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+        .value-item {
+            display: flex; align-items: flex-start; gap: 0.8rem;
+            padding: 0.8rem; border-radius: 10px;
+            transition: background 0.3s;
         }
-
-        .portfolio-card p {
-            color: var(--marble-cream);
+        .value-item:hover { background: rgba(184, 149, 106, 0.06); }
+        .value-check {
+            width: 28px; height: 28px; min-width: 28px;
+            background: var(--marble-gold); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: bold; font-size: 0.8rem;
         }
+        .value-text { font-size: 0.95rem; }
+        .value-text strong { display: block; color: var(--marble-charcoal); margin-bottom: 0.2rem; }
+        .value-text span { color: var(--marble-dark); font-size: 0.85rem; }
 
-        /* Testimonials */
-        .testimonials {
-            padding: 6rem 3rem;
-        }
-
+        /* ─── TESTIMONIALS ─── */
+        .testimonials { padding: 6rem 3rem; background: linear-gradient(180deg, rgba(237,233,228,0.3) 0%, transparent 100%); }
         .testimonial-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
         }
-
         .testimonial-card {
             background: rgba(248, 246, 244, 0.8);
             border: 1px solid rgba(184, 149, 106, 0.2);
-            border-radius: 15px;
-            padding: 2.5rem;
+            border-radius: 15px; padding: 2.5rem;
             position: relative;
+            transition: all 0.3s var(--transition-smooth);
         }
-
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(43, 41, 38, 0.1);
+        }
         .quote-icon {
-            font-size: 4rem;
-            color: var(--marble-gold);
-            opacity: 0.3;
-            line-height: 1;
-            margin-bottom: 1rem;
+            font-size: 3.5rem; color: var(--marble-gold); opacity: 0.3;
+            line-height: 1; margin-bottom: 0.8rem;
         }
-
         .testimonial-text {
-            font-size: 1.1rem;
-            color: var(--marble-dark);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-style: italic;
+            font-size: 1rem; color: var(--marble-dark); line-height: 1.8;
+            margin-bottom: 1.5rem; font-style: italic;
         }
+        .testimonial-author { font-weight: 600; color: var(--marble-charcoal); }
+        .testimonial-role { color: var(--marble-gold); font-size: 0.85rem; }
 
-        .testimonial-author {
-            font-weight: 600;
+        /* ─── FAQ ─── */
+        .faq { padding: 6rem 3rem; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 12px; margin-bottom: 1rem;
+            overflow: hidden; background: rgba(248, 246, 244, 0.5);
+            transition: all 0.3s var(--transition-smooth);
+        }
+        .faq-item:hover { border-color: var(--marble-gold); }
+        .faq-question {
+            padding: 1.5rem 2rem; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem; font-weight: 600;
             color: var(--marble-charcoal);
+            transition: all 0.3s;
+            background: none; border: none; width: 100%; text-align: left;
+        }
+        .faq-question:hover { color: var(--marble-gold); }
+        .faq-toggle {
+            width: 30px; height: 30px; min-width: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.2rem; font-weight: 300;
+            transition: transform 0.3s var(--transition-smooth);
+        }
+        .faq-item.active .faq-toggle { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s var(--transition-smooth), padding 0.4s;
+        }
+        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-answer-inner {
+            padding: 0 2rem 1.5rem;
+            color: var(--marble-dark); line-height: 1.8; font-size: 0.95rem;
         }
 
-        .testimonial-role {
-            color: var(--marble-gold);
-            font-size: 0.9rem;
-        }
-
-        /* CTA Section */
+        /* ─── CTA ─── */
         .cta-section {
             padding: 6rem 3rem;
             background: linear-gradient(135deg, var(--marble-charcoal), var(--marble-black));
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            text-align: center; position: relative; overflow: hidden;
         }
-
         .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background:
                 radial-gradient(circle at 20% 50%, rgba(184, 149, 106, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 50%, rgba(184, 149, 106, 0.1) 0%, transparent 50%);
         }
-
         .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+            max-width: 800px; margin: 0 auto; position: relative; z-index: 2;
         }
-
         .cta-section h2 {
-            font-size: 3.5rem;
-            color: var(--marble-white);
-            margin-bottom: 1.5rem;
+            font-size: 3.2rem; color: var(--marble-white); margin-bottom: 1.5rem;
         }
-
         .cta-section p {
-            font-size: 1.3rem;
-            color: var(--marble-cream);
-            margin-bottom: 2.5rem;
+            font-size: 1.2rem; color: var(--marble-cream); margin-bottom: 2.5rem;
         }
+        .cta-section .cta-button { font-size: 1.1rem; padding: 1.2rem 3rem; }
 
-        .cta-section .cta-button {
-            font-size: 1.1rem;
-            padding: 1.2rem 3rem;
-        }
-
-        /* Footer */
+        /* ─── FOOTER ─── */
         footer {
-            background: var(--marble-black);
-            color: var(--marble-cream);
+            background: var(--marble-black); color: var(--marble-cream);
             padding: 4rem 3rem 2rem;
         }
-
         .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            max-width: 1400px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem; margin-bottom: 3rem;
         }
-
         .footer-logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--marble-gold);
-            margin-bottom: 1rem;
+            font-size: 2.5rem; font-weight: 700;
+            color: var(--marble-gold); margin-bottom: 1rem;
         }
-
         .footer-section h4 {
-            color: var(--marble-gold);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+            color: var(--marble-gold); margin-bottom: 1.5rem; font-size: 1.2rem;
         }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.8rem; }
         .footer-links a {
-            color: var(--marble-cream);
-            text-decoration: none;
+            color: var(--marble-cream); text-decoration: none;
             transition: color 0.3s var(--transition-smooth);
+            font-size: 0.95rem;
         }
-
-        .footer-links a:hover {
-            color: var(--marble-gold);
-        }
-
+        .footer-links a:hover { color: var(--marble-gold); }
         .footer-bottom {
             border-top: 1px solid rgba(184, 149, 106, 0.2);
-            padding-top: 2rem;
-            text-align: center;
-            color: var(--marble-grey);
+            padding-top: 2rem; text-align: center; color: var(--marble-grey);
         }
 
-        /* Responsive */
+        /* ─── RESPONSIVE ─── */
         @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 3.5rem;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 3.2rem; }
+            .hero-buttons { justify-content: center; }
+            .services-grid, .cases-grid, .benefits-grid, .testimonial-container { grid-template-columns: 1fr 1fr; }
+            .about-container { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                gap: 1.5rem;
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .nav-links.active {
+                display: flex; flex-direction: column;
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: rgba(248, 246, 244, 0.98);
+                padding: 2rem; gap: 1.5rem;
+                border-bottom: 1px solid rgba(184, 149, 106, 0.2);
             }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-text p {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .services-grid,
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            .hero { padding: 7rem 1.5rem 3rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2.3rem; }
+            .services-grid, .cases-grid, .benefits-grid, .testimonial-container { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: 1fr 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .services, .process, .case-studies, .benefits, .about, .testimonials, .faq, .cta-section { padding: 4rem 1.5rem; }
+            .process-step { gap: 1.5rem; }
+            .process-number { width: 60px; height: 60px; min-width: 60px; font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav id="nav">
         <div class="nav-container">
             <a href="#" class="logo">BASHUA</a>
+            <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#work">Work</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact" class="cta-button">Get Started</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Do You Need a<br><span>Unique</span> <span>Modern</span><br><span>Professional</span><br>Website?</h1>
-                <p>We create custom websites that don't just look beautiful they work hard to grow your business and turn visitors into customers.</p>
+                <h1>We Build Websites That<br><span>Grow Your</span><br><span>Business</span></h1>
+                <p>We don't just build beautiful websites — we provide the strategy, consulting, and technical expertise to make sure your online presence actually drives results. From custom development to software consulting, we align every decision with your business goals.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="primary-btn">Get Started</a>
-                    <a href="#services" class="secondary-btn">View Services</a>
+                    <a href="#contact" class="primary-btn">Start Your Project</a>
+                    <a href="#services" class="secondary-btn">How We Help</a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="marble-card">
-                    <h3 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--marble-charcoal);">What You Get</h3>
-                    <div style="display: grid; gap: 1.5rem;">
-                        <div>
-                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--marble-gold);">✓</div>
-                            <div style="color: var(--marble-dark); font-size: 1.1rem; font-weight: 600;">Custom Design</div>
-                            <div style="color: var(--marble-grey); font-size: 0.9rem;">Built just for you</div>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--marble-charcoal);">Results That Speak</h3>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">97%</div>
+                            <div class="stat-label">Client Satisfaction</div>
                         </div>
-                        <div>
-                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--marble-gold);">✓</div>
-                            <div style="color: var(--marble-dark); font-size: 1.1rem; font-weight: 600;">Mobile Friendly</div>
-                            <div style="color: var(--marble-grey); font-size: 0.9rem;">Looks great everywhere</div>
+                        <div class="stat-item">
+                            <div class="stat-number">3x</div>
+                            <div class="stat-label">Avg. Lead Increase</div>
                         </div>
-                        <div>
-                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--marble-gold);">✓</div>
-                            <div style="color: var(--marble-dark); font-size: 1.1rem; font-weight: 600;">Gets Results</div>
-                            <div style="color: var(--marble-grey); font-size: 0.9rem;">Turns visitors into customers</div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24hr</div>
+                            <div class="stat-label">Response Time</div>
                         </div>
                     </div>
                 </div>
@@ -800,98 +676,270 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services -->
     <section class="services" id="services">
         <div class="section-header">
             <div class="section-subtitle">What We Do</div>
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-description">Everything you need to get your business online and growing.</p>
+            <h2 class="section-title">Development & Consulting</h2>
+            <p class="section-description">We combine hands-on web development with strategic software consulting — so you get a website that looks great and a business strategy that works.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🎨</div>
                 <h3>Web Development</h3>
-                <p>We build custom websites that are beautiful, fast, and easy to manage. Your website will look professional and work perfectly on all devices.</p>
+                <p>Custom-built websites that are beautiful, fast, and easy to manage. We make sure your site looks professional and works perfectly on every device.</p>
+                <a href="#" class="service-link">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Software Strategy</h3>
+                <p>We review your current systems and design a clear roadmap to improve them. Every recommendation is tied to a specific business goal — no wasted effort.</p>
                 <a href="#" class="service-link">Learn More →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon">💰</div>
-                <h3>Turn Your Website Into Revenue</h3>
-                <p>Already have a website but it's not bringing in customers? We optimize your existing site to convert more visitors into paying customers.</p>
+                <h3>Revenue Optimisation</h3>
+                <p>Already have a website but it's not bringing in customers? We optimise your existing site to convert more visitors into paying customers.</p>
+                <a href="#" class="service-link">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔒</div>
+                <h3>System Review & Security</h3>
+                <p>A thorough review of your current software systems to find weak points, security risks, and ways to improve performance and efficiency.</p>
                 <a href="#" class="service-link">Learn More →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon">📱</div>
-                <h3>Marketing</h3>
-                <p>Get found online with our marketing services. We help your business reach more customers and grow through digital marketing strategies.</p>
+                <h3>Marketing & SEO</h3>
+                <p>Get found online. We help your business reach more customers and grow through search engine optimisation and digital marketing strategies.</p>
                 <a href="#" class="service-link">Learn More →</a>
             </div>
             <div class="service-card">
                 <div class="service-icon">✨</div>
-                <h3>Logo and Branding Design</h3>
-                <p>Create a memorable brand identity with custom logos and branding that captures what makes your business special and stands out.</p>
+                <h3>Logo & Branding</h3>
+                <p>Create a memorable brand identity with custom logos and branding that captures what makes your business special and helps you stand out.</p>
                 <a href="#" class="service-link">Learn More →</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="section-header">
+            <div class="section-subtitle">How We Work</div>
+            <h2 class="section-title">Our Process</h2>
+            <p class="section-description">A clear, structured approach from first conversation to final launch — so you always know what's happening and when.</p>
+        </div>
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="process-number">1</div>
+                <div class="process-content">
+                    <h3>Discovery & Consultation</h3>
+                    <p>We sit down with you to understand your business, your goals, and what's not working right now. We look at your existing systems and identify the biggest opportunities for growth.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">2</div>
+                <div class="process-content">
+                    <h3>Strategy & Planning</h3>
+                    <p>Based on what we learn, we create a clear roadmap. This covers everything from the technology we'll use, the timeline, and how each decision ties back to your business goals.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">3</div>
+                <div class="process-content">
+                    <h3>Design & Prototyping</h3>
+                    <p>We design your solution so you can see and feel it before we build it. This means no surprises — you'll know exactly what you're getting and can give feedback early.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">4</div>
+                <div class="process-content">
+                    <h3>Development & Build</h3>
+                    <p>We build your solution in stages, checking in regularly so you can see progress. Every feature is built with performance, security, and scalability in mind.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">5</div>
+                <div class="process-content">
+                    <h3>Testing & Quality Checks</h3>
+                    <p>We rigorously test everything — functionality, speed, security, and user experience — to make sure your solution is solid before it goes live.</p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">6</div>
+                <div class="process-content">
+                    <h3>Launch & Ongoing Support</h3>
+                    <p>We handle the full launch and stick around to make sure everything runs smoothly. We provide ongoing support, optimisation, and improvements as your business grows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies" id="work">
+        <div class="section-header">
+            <div class="section-subtitle">Our Work</div>
+            <h2 class="section-title">Case Studies</h2>
+            <p class="section-description">Real results for real businesses. Here's how we've helped our clients grow.</p>
+        </div>
+        <div class="cases-grid">
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-tag">E-Commerce</div>
+                    <div class="case-image-icon">🛒</div>
+                </div>
+                <div class="case-body">
+                    <h3>Online Fashion Retailer</h3>
+                    <p>Built a modern online store with an optimised checkout flow. The new site made browsing and buying effortless, leading to a significant jump in sales.</p>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <div class="metric-value">+180%</div>
+                            <div class="metric-label">Online Sales</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">-45%</div>
+                            <div class="metric-label">Cart Abandonment</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">2.1s</div>
+                            <div class="metric-label">Load Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-tag">Professional Services</div>
+                    <div class="case-image-icon">💼</div>
+                </div>
+                <div class="case-body">
+                    <h3>Consulting Firm Rebrand</h3>
+                    <p>A complete website rebuild and brand refresh for a growing consulting firm. We reviewed their old systems, modernised their tech stack, and delivered a site that converts.</p>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <div class="metric-value">+320%</div>
+                            <div class="metric-label">Lead Enquiries</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">+95%</div>
+                            <div class="metric-label">SEO Traffic</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4 wks</div>
+                            <div class="metric-label">Delivery</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-tag">Health & Wellness</div>
+                    <div class="case-image-icon">🏥</div>
+                </div>
+                <div class="case-body">
+                    <h3>Clinic Booking Platform</h3>
+                    <p>Designed a clean, easy-to-navigate website with integrated booking. We also conducted a security audit to protect sensitive patient data.</p>
+                    <div class="case-metrics">
+                        <div class="metric">
+                            <div class="metric-value">+240%</div>
+                            <div class="metric-label">Online Bookings</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">100%</div>
+                            <div class="metric-label">GDPR Compliant</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">-60%</div>
+                            <div class="metric-label">No-Shows</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="section-header">
+            <div class="section-subtitle">Why It Matters</div>
+            <h2 class="section-title">The Benefits of Working With Us</h2>
+            <p class="section-description">When you combine great web development with smart consulting, the results speak for themselves.</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🧠</div>
+                <h3>Strategic Expertise</h3>
+                <p>We don't just build — we advise. Every decision is backed by strategy so your investment delivers real returns.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💷</div>
+                <h3>Cost-Effective</h3>
+                <p>Get agency-quality work without agency prices. We find the smartest solutions that fit your budget.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Fast Delivery</h3>
+                <p>We respect your time. Clear timelines, regular updates, and on-time delivery every time.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🔒</div>
+                <h3>Security First</h3>
+                <p>Every project is built with security best practices. We protect your data and your customers' trust.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <h3>Built to Scale</h3>
+                <p>Your business will grow — and your website should too. We build solutions that scale with you.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🤝</div>
+                <h3>True Partnership</h3>
+                <p>We work alongside your team, not above them. You get a partner who genuinely cares about your success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
     <section class="about" id="about">
         <div class="about-container">
             <div class="about-image"></div>
             <div class="about-content">
                 <div class="section-subtitle">About Bashua</div>
-                <h2>Creative Design & Development</h2>
-                <p>We're a web development team that creates custom-built, functional, and attractive websites to meet your unique business needs.</p>
-                <p>Whether you need a brand new website or want to improve the one you have, we make sure your online presence works hard to grow your business.</p>
-                <div class="features-list">
-                    <div class="feature-item">
-                        <div class="feature-check">✓</div>
-                        <span>Easy to Manage</span>
+                <h2>We Build & We Advise</h2>
+                <p>Bashua is a web development and software consulting team. We create custom-built, functional, and attractive websites — but we go further. We provide the expert guidance businesses need to make smart technology decisions that align with their long-term goals.</p>
+                <p>Whether you need a brand new website, want to improve the one you have, or need someone to review your systems and create a strategy — we make sure every line of code serves a specific business purpose. Your mission is growth; our mission is the technology that makes it possible.</p>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-check">✓</div>
+                        <div class="value-text">
+                            <strong>Results-Driven</strong>
+                            <span>Every project is measured by business impact</span>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-check">✓</div>
-                        <span>Fast Delivery</span>
+                    <div class="value-item">
+                        <div class="value-check">✓</div>
+                        <div class="value-text">
+                            <strong>Transparent</strong>
+                            <span>No jargon, no hidden costs, no surprises</span>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-check">✓</div>
-                        <span>Highly Professional</span>
+                    <div class="value-item">
+                        <div class="value-check">✓</div>
+                        <div class="value-text">
+                            <strong>Quality Obsessed</strong>
+                            <span>We don't cut corners on code or design</span>
+                        </div>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-check">✓</div>
-                        <span>Responsive Designs</span>
+                    <div class="value-item">
+                        <div class="value-check">✓</div>
+                        <div class="value-text">
+                            <strong>Client-First</strong>
+                            <span>Your goals drive every decision we make</span>
+                        </div>
                     </div>
                 </div>
-                <a href="#contact" class="primary-btn">Get Started</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="section-header">
-            <div class="section-subtitle">Our Work</div>
-            <h2 class="section-title">Our Portfolio</h2>
-            <p class="section-description">From stunning websites to impactful branding, see what we can create for you.</p>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <div class="portfolio-overlay">
-                    <h3>E-Commerce Store</h3>
-                    <p>Built a modern online store that made it easy for customers to browse and buy products, increasing sales significantly.</p>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <div class="portfolio-overlay">
-                    <h3>Business Website</h3>
-                    <p>Created a professional website that helped this local business attract more customers and establish credibility online.</p>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <div class="portfolio-overlay">
-                    <h3>Service Provider</h3>
-                    <p>Designed a clean, easy-to-navigate website that made booking appointments simple and boosted customer inquiries.</p>
-                </div>
+                <a href="#contact" class="primary-btn">Work With Us</a>
             </div>
         </div>
     </section>
@@ -905,31 +953,95 @@
         <div class="testimonial-container">
             <div class="testimonial-card">
                 <div class="quote-icon">"</div>
-                <p class="testimonial-text">Bashua built us a beautiful website that our customers love. We're getting more inquiries than ever before!</p>
+                <p class="testimonial-text">Bashua didn't just build us a website — they helped us rethink our entire online strategy. We're getting more leads than ever and the site practically runs itself.</p>
                 <div class="testimonial-author">Sarah Chen</div>
                 <div class="testimonial-role">Owner, Local Boutique</div>
             </div>
             <div class="testimonial-card">
                 <div class="quote-icon">"</div>
-                <p class="testimonial-text">They made the whole process so easy. Our new website looks professional and actually brings in new customers.</p>
+                <p class="testimonial-text">They reviewed our old systems, found the bottlenecks, and rebuilt everything properly. The process was clear and the results were immediate.</p>
                 <div class="testimonial-author">Michael Roberts</div>
                 <div class="testimonial-role">Director, Home Services Co.</div>
             </div>
             <div class="testimonial-card">
                 <div class="quote-icon">"</div>
-                <p class="testimonial-text">Best investment we made for our business. The website pays for itself with all the new leads we're getting.</p>
+                <p class="testimonial-text">Best investment we made for our business. They combined the website build with proper consulting — the kind of strategic thinking you usually only get from expensive agencies.</p>
                 <div class="testimonial-author">Jennifer Martinez</div>
                 <div class="testimonial-role">Founder, Consulting Firm</div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <div class="section-subtitle">Common Questions</div>
+            <h2 class="section-title">Frequently Asked</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What's the difference between web development and consulting?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Web development is the actual building of your website. Consulting is the strategic side — reviewing your current systems, identifying what's working and what's not, and creating a plan to improve things. We offer both, which means you get a website that's not just well-built but strategically sound.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    How long does a typical project take?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Most websites take between 3-6 weeks depending on complexity. A simple business website might be ready in 2-3 weeks, while a more complex project with consulting and custom features could take 6-8 weeks. We'll give you a clear timeline before we start.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do I need consulting, or just a website?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">It depends on where you are. If you're starting fresh and just need a great website, we can do that. But if you already have systems in place that aren't performing, or you want to make sure your tech decisions align with your business goals, consulting will save you time and money in the long run.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What does a system review involve?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">We look at your current website, software, and digital tools. We check for security risks, performance issues, user experience problems, and anything that's slowing your business down. You'll get a clear report with prioritised recommendations you can act on.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    How much does it cost?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Every project is different, so we quote based on your specific needs. We're upfront about pricing — no hidden fees or surprise costs. Get in touch and we'll give you a clear breakdown before any work begins.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you offer ongoing support after launch?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Yes. We offer maintenance packages that include regular updates, security monitoring, performance checks, and content updates. We don't just build and disappear — we stick around to make sure your site keeps performing.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="cta-content">
-            <h2>Let's Get Started On Your Project</h2>
-            <p>Ready to get a website that looks great and brings in customers?</p>
-            <a href="#" class="cta-button">Get Started</a>
+            <h2>Ready to Build Something That Works?</h2>
+            <p>Whether you need a new website, a strategy review, or both — let's have a conversation about how we can help your business grow.</p>
+            <a href="#" class="cta-button">Start Your Project</a>
         </div>
     </section>
 
@@ -938,23 +1050,27 @@
         <div class="footer-content">
             <div>
                 <div class="footer-logo">BASHUA</div>
-                <p style="margin-top: 1rem; line-height: 1.8;">We create beautiful, functional websites that help your business grow and succeed online.</p>
+                <p style="margin-top: 1rem; line-height: 1.8; font-size: 0.95rem;">We build beautiful, functional websites and provide the strategic consulting to make sure your technology drives real business growth.</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
                 <ul class="footer-links">
                     <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Website Revenue</a></li>
-                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">Software Consulting</a></li>
+                    <li><a href="#">Revenue Optimisation</a></li>
+                    <li><a href="#">System Review</a></li>
+                    <li><a href="#">Marketing & SEO</a></li>
                     <li><a href="#">Branding</a></li>
                 </ul>
             </div>
@@ -969,41 +1085,37 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Bashua Front End. All rights reserved.</p>
+            <p>&copy; 2026 Bashua. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Navigation scroll effect
+        // Nav scroll effect
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            nav.classList.toggle('scrolled', window.scrollY > 100);
         });
 
-        // Scroll reveal animation for elements
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
+            });
+        });
 
+        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1011,10 +1123,9 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
-        // Apply animation to cards
-        document.querySelectorAll('.service-card, .portfolio-card, .testimonial-card').forEach(el => {
+        document.querySelectorAll('.service-card, .case-card, .benefit-card, .testimonial-card, .process-step, .faq-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
