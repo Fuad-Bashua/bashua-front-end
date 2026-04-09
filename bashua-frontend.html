@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bashua — Web Development & Software Consulting</title>
+    <title>Bashua — Software Consulting for Clinics & Tradespeople in London</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -73,7 +73,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 2rem; font-weight: 700;
             color: var(--marble-charcoal);
-            text-decoration: none; letter-spacing: 1px;
+            text-decoration: none; letter-spacing: 2px;
             position: relative;
         }
         .logo::after {
@@ -108,13 +108,13 @@
             border-radius: 50px; text-decoration: none; font-weight: 600;
             transition: all 0.3s var(--transition-smooth);
             box-shadow: 0 4px 15px rgba(184, 149, 106, 0.3);
+            font-size: 0.9rem;
         }
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 25px rgba(184, 149, 106, 0.4);
         }
 
-        /* Mobile menu */
         .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
         .mobile-toggle span {
             display: block; width: 25px; height: 2px;
@@ -140,13 +140,20 @@
 
         .hero-content {
             max-width: 1400px; margin: 0 auto;
-            display: grid; grid-template-columns: 1fr 1fr;
+            display: grid; grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem; align-items: center;
         }
-        .hero-text h1 {
-            font-size: 4.2rem; line-height: 1.1;
-            color: var(--marble-charcoal); margin-bottom: 1.5rem;
+        .hero-text .eyebrow {
+            display: inline-block;
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px;
+            color: var(--marble-gold); font-weight: 600;
+            margin-bottom: 1.2rem;
             animation: slideInLeft 1s var(--transition-smooth);
+        }
+        .hero-text h1 {
+            font-size: 3.8rem; line-height: 1.1;
+            color: var(--marble-charcoal); margin-bottom: 1.5rem;
+            animation: slideInLeft 1s 0.1s var(--transition-smooth) backwards;
         }
         .hero-text h1 span {
             background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
@@ -157,10 +164,15 @@
             from { opacity: 0; transform: translateX(-50px); }
             to { opacity: 1; transform: translateX(0); }
         }
-        .hero-text p {
-            font-size: 1.2rem; color: var(--marble-dark);
-            margin-bottom: 2.5rem; line-height: 1.8;
+        .hero-lead {
+            font-size: 1.2rem; color: var(--marble-charcoal);
+            margin-bottom: 1rem; line-height: 1.7; font-weight: 500;
             animation: slideInLeft 1s 0.2s var(--transition-smooth) backwards;
+        }
+        .hero-text p {
+            font-size: 1.05rem; color: var(--marble-dark);
+            margin-bottom: 2.5rem; line-height: 1.8;
+            animation: slideInLeft 1s 0.3s var(--transition-smooth) backwards;
         }
         .hero-buttons {
             display: flex; gap: 1.5rem;
@@ -172,7 +184,7 @@
             border-radius: 50px; text-decoration: none; font-weight: 600;
             transition: all 0.3s var(--transition-smooth);
             box-shadow: 0 6px 20px rgba(43, 41, 38, 0.3);
-            border: 2px solid transparent;
+            border: 2px solid transparent; font-size: 0.95rem;
         }
         .primary-btn:hover {
             transform: translateY(-3px);
@@ -183,7 +195,7 @@
             padding: 1rem 2.5rem; border-radius: 50px;
             text-decoration: none; font-weight: 600;
             transition: all 0.3s var(--transition-smooth);
-            border: 2px solid var(--marble-gold);
+            border: 2px solid var(--marble-gold); font-size: 0.95rem;
         }
         .secondary-btn:hover {
             background: var(--marble-gold); color: var(--marble-white);
@@ -217,16 +229,26 @@
             50% { opacity: 0.8; transform: scale(1.1); }
         }
 
-        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .stat-item { text-align: center; padding: 1rem; }
-        .stat-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem; font-weight: 700;
-            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text; line-height: 1.2;
+        .hero-card-title {
+            font-size: 1.4rem; color: var(--marble-charcoal); margin-bottom: 1.5rem;
         }
-        .stat-label { font-size: 0.85rem; color: var(--marble-dark); font-weight: 500; margin-top: 0.3rem; }
+        .hero-card-item {
+            display: flex; align-items: flex-start; gap: 1rem;
+            margin-bottom: 1.2rem; padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(184, 149, 106, 0.1);
+        }
+        .hero-card-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .hero-card-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem; font-weight: 700; color: var(--marble-gold);
+            min-width: 30px;
+        }
+        .hero-card-item strong {
+            display: block; color: var(--marble-charcoal); font-size: 0.95rem; margin-bottom: 0.2rem;
+        }
+        .hero-card-item span {
+            color: var(--marble-dark); font-size: 0.85rem; line-height: 1.5;
+        }
 
         /* ─── SHARED SECTION STYLES ─── */
         .section-header {
@@ -237,59 +259,175 @@
             color: var(--marble-gold); font-weight: 600; margin-bottom: 1rem;
         }
         .section-title {
-            font-size: 3.2rem; color: var(--marble-charcoal); margin-bottom: 1.5rem;
+            font-size: 3rem; color: var(--marble-charcoal); margin-bottom: 1.5rem;
         }
         .section-description {
-            font-size: 1.15rem; color: var(--marble-dark); line-height: 1.8;
+            font-size: 1.1rem; color: var(--marble-dark); line-height: 1.8;
         }
 
-        /* ─── SERVICES ─── */
-        .services {
+        /* ─── WHO WE HELP ─── */
+        .who-we-help {
+            padding: 5rem 3rem;
+            border-top: 1px solid rgba(184, 149, 106, 0.1);
+            border-bottom: 1px solid rgba(184, 149, 106, 0.1);
+        }
+        .who-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+        }
+        .who-card {
+            background: rgba(248, 246, 244, 0.7);
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 15px; padding: 2.5rem;
+            transition: all 0.3s var(--transition-smooth);
+        }
+        .who-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(43, 41, 38, 0.08);
+            border-color: var(--marble-gold);
+        }
+        .who-card-label {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
+            color: var(--marble-gold); font-weight: 600; margin-bottom: 0.8rem;
+        }
+        .who-card h3 {
+            font-size: 1.8rem; color: var(--marble-charcoal); margin-bottom: 1rem;
+        }
+        .who-card p {
+            color: var(--marble-dark); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.2rem;
+        }
+        .who-card-list {
+            list-style: none;
+            display: flex; flex-wrap: wrap; gap: 0.5rem;
+        }
+        .who-card-list li {
+            background: rgba(184, 149, 106, 0.1);
+            color: var(--marble-charcoal);
+            padding: 0.4rem 0.9rem; border-radius: 50px;
+            font-size: 0.8rem; font-weight: 500;
+        }
+
+        /* ─── LOGO BAR ─── */
+        .logo-bar {
+            padding: 3rem 3rem;
+        }
+        .logo-bar-inner {
+            max-width: 1000px; margin: 0 auto; text-align: center;
+        }
+        .logo-bar-label {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px;
+            color: var(--marble-dark); font-weight: 600; margin-bottom: 2rem;
+        }
+        .logo-bar-logos {
+            display: flex; justify-content: center; align-items: center;
+            gap: 3.5rem; flex-wrap: wrap;
+        }
+        .logo-placeholder {
+            width: 120px; height: 40px;
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.08), rgba(184, 149, 106, 0.15));
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; font-weight: 600; color: var(--marble-dark);
+            letter-spacing: 1px; text-transform: uppercase;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .logo-placeholder:hover { opacity: 1; }
+
+        /* ─── PHILOSOPHY / POV ─── */
+        .philosophy {
+            padding: 6rem 3rem;
+            background: linear-gradient(135deg, var(--marble-charcoal), var(--marble-black));
+            position: relative; overflow: hidden;
+        }
+        .philosophy::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background:
+                radial-gradient(circle at 15% 50%, rgba(184, 149, 106, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 50%, rgba(184, 149, 106, 0.06) 0%, transparent 50%);
+        }
+        .philosophy-container {
+            max-width: 1000px; margin: 0 auto; position: relative; z-index: 2;
+            text-align: center;
+        }
+        .philosophy .section-subtitle { color: var(--marble-gold-light); }
+        .philosophy-statement {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem; font-weight: 400; line-height: 1.5;
+            color: var(--marble-white); margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        .philosophy-statement em {
+            font-style: normal;
+            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; font-weight: 600;
+        }
+        .philosophy-detail {
+            font-size: 1.05rem; color: var(--marble-grey); line-height: 1.9;
+            max-width: 750px; margin: 0 auto;
+        }
+
+        /* ─── PROBLEMS WE SOLVE ─── */
+        .problems {
             padding: 6rem 3rem;
             background: linear-gradient(180deg, transparent 0%, rgba(237, 233, 228, 0.3) 100%);
         }
-        .services-grid {
-            max-width: 1400px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+        .problems-grid {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr; gap: 0;
         }
-        .service-card {
-            background: rgba(248, 246, 244, 0.6);
-            border: 1px solid rgba(184, 149, 106, 0.2);
-            border-radius: 15px; padding: 2.5rem;
+        .problem-card {
+            display: grid; grid-template-columns: 1fr 1fr;
+            border: 1px solid rgba(184, 149, 106, 0.15);
+            border-bottom: none;
+            background: rgba(248, 246, 244, 0.5);
             transition: all 0.4s var(--transition-smooth);
-            cursor: pointer; position: relative; overflow: hidden;
+            overflow: hidden;
         }
-        .service-card::before {
-            content: ''; position: absolute; top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(184, 149, 106, 0.1), transparent);
-            transition: left 0.5s;
+        .problem-card:first-child { border-radius: 15px 15px 0 0; }
+        .problem-card:last-child { border-bottom: 1px solid rgba(184, 149, 106, 0.15); border-radius: 0 0 15px 15px; }
+        .problem-card:hover {
+            background: rgba(248, 246, 244, 0.9);
+            box-shadow: 0 8px 30px rgba(43, 41, 38, 0.08);
+            z-index: 2; position: relative;
         }
-        .service-card:hover::before { left: 100%; }
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(43, 41, 38, 0.15);
-            border-color: var(--marble-gold);
+
+        .problem-left {
+            padding: 3rem;
+            border-right: 1px solid rgba(184, 149, 106, 0.1);
         }
-        .service-icon {
-            width: 65px; height: 65px;
-            background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
-            border-radius: 15px;
+        .problem-label {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
+            color: var(--marble-gold); font-weight: 600; margin-bottom: 0.8rem;
+        }
+        .problem-left h3 {
+            font-size: 1.8rem; color: var(--marble-charcoal); margin-bottom: 0.8rem; line-height: 1.3;
+        }
+        .problem-left p {
+            color: var(--marble-dark); line-height: 1.7; font-size: 0.95rem;
+        }
+
+        .problem-right {
+            padding: 3rem;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .solution-label {
+            font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
+            color: var(--marble-charcoal); font-weight: 600; margin-bottom: 1rem;
+        }
+        .solution-items { list-style: none; }
+        .solution-items li {
+            display: flex; align-items: flex-start; gap: 0.8rem;
+            margin-bottom: 0.8rem; font-size: 0.95rem; color: var(--marble-dark);
+        }
+        .solution-check {
+            width: 22px; height: 22px; min-width: 22px;
+            background: var(--marble-gold); border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 1.5rem; font-size: 1.8rem;
+            color: white; font-size: 0.7rem; font-weight: bold; margin-top: 2px;
         }
-        .service-card h3 {
-            font-size: 1.6rem; color: var(--marble-charcoal); margin-bottom: 0.8rem;
-        }
-        .service-card p {
-            color: var(--marble-dark); line-height: 1.8; margin-bottom: 1.2rem; font-size: 0.95rem;
-        }
-        .service-link {
-            color: var(--marble-gold); text-decoration: none; font-weight: 600;
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            transition: gap 0.3s var(--transition-smooth); font-size: 0.95rem;
-        }
-        .service-link:hover { gap: 1rem; }
 
         /* ─── PROCESS ─── */
         .process { padding: 6rem 3rem; }
@@ -302,7 +440,7 @@
             background: linear-gradient(180deg, var(--marble-gold), var(--marble-gold-light), var(--marble-cream));
         }
         .process-step {
-            display: flex; gap: 2.5rem; margin-bottom: 3rem;
+            display: flex; gap: 2.5rem; margin-bottom: 2.5rem;
             position: relative; align-items: flex-start;
         }
         .process-number {
@@ -318,7 +456,7 @@
         .process-content {
             background: rgba(248, 246, 244, 0.6);
             border: 1px solid rgba(184, 149, 106, 0.15);
-            border-radius: 15px; padding: 2rem;
+            border-radius: 15px; padding: 1.8rem;
             flex: 1;
             transition: all 0.3s var(--transition-smooth);
         }
@@ -327,10 +465,10 @@
             box-shadow: 0 8px 25px rgba(43, 41, 38, 0.08);
         }
         .process-content h3 {
-            font-size: 1.5rem; color: var(--marble-charcoal); margin-bottom: 0.5rem;
+            font-size: 1.4rem; color: var(--marble-charcoal); margin-bottom: 0.4rem;
         }
         .process-content p {
-            color: var(--marble-dark); line-height: 1.8; font-size: 0.95rem;
+            color: var(--marble-dark); line-height: 1.8; font-size: 0.9rem;
         }
 
         /* ─── CASE STUDIES ─── */
@@ -339,8 +477,8 @@
             background: linear-gradient(180deg, rgba(237, 233, 228, 0.3) 0%, transparent 100%);
         }
         .cases-grid {
-            max-width: 1400px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
         }
         .case-card {
             background: rgba(248, 246, 244, 0.7);
@@ -353,7 +491,7 @@
             box-shadow: 0 15px 40px rgba(43, 41, 38, 0.12);
         }
         .case-image {
-            height: 200px; position: relative;
+            height: 160px; position: relative;
             background: linear-gradient(135deg, var(--marble-cream), var(--marble-grey));
             display: flex; align-items: center; justify-content: center;
         }
@@ -361,67 +499,71 @@
             position: absolute; top: 1rem; left: 1rem;
             background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
             color: white; padding: 0.3rem 1rem;
-            border-radius: 50px; font-size: 0.75rem;
+            border-radius: 50px; font-size: 0.7rem;
             font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
         }
-        .case-image-icon {
-            font-size: 3.5rem; opacity: 0.3;
-        }
-        .case-body { padding: 2rem; }
+        .case-image-icon { font-size: 3rem; opacity: 0.25; }
+        .case-body { padding: 1.8rem; }
         .case-body h3 {
-            font-size: 1.5rem; color: var(--marble-charcoal); margin-bottom: 0.8rem;
+            font-size: 1.3rem; color: var(--marble-charcoal); margin-bottom: 0.6rem;
+        }
+        .case-challenge {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--marble-gold); font-weight: 600; margin-bottom: 0.4rem;
         }
         .case-body p {
-            color: var(--marble-dark); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem;
+            color: var(--marble-dark); line-height: 1.7; font-size: 0.9rem; margin-bottom: 1.2rem;
         }
         .case-metrics {
-            display: flex; gap: 1.5rem;
+            display: flex; gap: 1rem;
             border-top: 1px solid rgba(184, 149, 106, 0.15);
-            padding-top: 1.2rem;
+            padding-top: 1rem;
         }
         .metric { text-align: center; flex: 1; }
         .metric-value {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem; font-weight: 700; color: var(--marble-gold);
+            font-size: 1.5rem; font-weight: 700; color: var(--marble-gold);
         }
-        .metric-label { font-size: 0.75rem; color: var(--marble-dark); font-weight: 500; }
+        .metric-label { font-size: 0.7rem; color: var(--marble-dark); font-weight: 500; }
 
-        /* ─── BENEFITS ─── */
-        .benefits { padding: 6rem 3rem; }
-        .benefits-grid {
-            max-width: 1400px; margin: 0 auto;
+        /* ─── WHAT TO EXPECT ─── */
+        .expect {
+            padding: 6rem 3rem;
+        }
+        .expect-grid {
+            max-width: 1200px; margin: 0 auto;
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
         }
-        .benefit-card {
-            background: rgba(248, 246, 244, 0.5);
-            border: 1px solid rgba(184, 149, 106, 0.15);
-            border-radius: 15px; padding: 2rem;
+        .expect-card {
+            background: rgba(248, 246, 244, 0.8);
+            border: 1px solid rgba(184, 149, 106, 0.2);
+            border-radius: 15px; padding: 2.5rem;
             text-align: center;
-            transition: all 0.4s var(--transition-smooth);
+            transition: all 0.3s var(--transition-smooth);
         }
-        .benefit-card:hover {
-            transform: translateY(-6px);
+        .expect-card:hover {
+            transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(43, 41, 38, 0.1);
             border-color: var(--marble-gold);
         }
-        .benefit-icon {
-            width: 60px; height: 60px; margin: 0 auto 1.2rem;
-            background: linear-gradient(135deg, rgba(184, 149, 106, 0.15), rgba(212, 184, 138, 0.15));
+        .expect-icon {
+            width: 70px; height: 70px; margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, rgba(184, 149, 106, 0.12), rgba(212, 184, 138, 0.12));
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
-        .benefit-card h3 {
-            font-size: 1.3rem; color: var(--marble-charcoal); margin-bottom: 0.5rem;
+        .expect-card h3 {
+            font-size: 1.3rem; color: var(--marble-charcoal); margin-bottom: 0.8rem;
         }
-        .benefit-card p {
-            color: var(--marble-dark); font-size: 0.9rem; line-height: 1.7;
+        .expect-card p {
+            color: var(--marble-dark); font-size: 0.9rem; line-height: 1.8;
         }
 
         /* ─── ABOUT ─── */
         .about { padding: 6rem 3rem; }
         .about-container {
-            max-width: 1400px; margin: 0 auto;
+            max-width: 1200px; margin: 0 auto;
             display: grid; grid-template-columns: 1fr 1fr;
             gap: 4rem; align-items: center;
         }
@@ -438,14 +580,14 @@
             letter-spacing: 10px;
         }
         .about-content h2 {
-            font-size: 2.8rem; color: var(--marble-charcoal); margin-bottom: 1.5rem;
+            font-size: 2.6rem; color: var(--marble-charcoal); margin-bottom: 1.5rem;
         }
         .about-content p {
-            font-size: 1.05rem; color: var(--marble-dark); line-height: 1.9; margin-bottom: 1.5rem;
+            font-size: 1rem; color: var(--marble-dark); line-height: 1.9; margin-bottom: 1.5rem;
         }
 
         .values-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2rem 0;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0;
         }
         .value-item {
             display: flex; align-items: flex-start; gap: 0.8rem;
@@ -454,45 +596,20 @@
         }
         .value-item:hover { background: rgba(184, 149, 106, 0.06); }
         .value-check {
-            width: 28px; height: 28px; min-width: 28px;
+            width: 26px; height: 26px; min-width: 26px;
             background: var(--marble-gold); border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            color: white; font-weight: bold; font-size: 0.8rem;
+            color: white; font-weight: bold; font-size: 0.75rem;
         }
-        .value-text { font-size: 0.95rem; }
-        .value-text strong { display: block; color: var(--marble-charcoal); margin-bottom: 0.2rem; }
-        .value-text span { color: var(--marble-dark); font-size: 0.85rem; }
-
-        /* ─── TESTIMONIALS ─── */
-        .testimonials { padding: 6rem 3rem; background: linear-gradient(180deg, rgba(237,233,228,0.3) 0%, transparent 100%); }
-        .testimonial-container {
-            max-width: 1200px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-        }
-        .testimonial-card {
-            background: rgba(248, 246, 244, 0.8);
-            border: 1px solid rgba(184, 149, 106, 0.2);
-            border-radius: 15px; padding: 2.5rem;
-            position: relative;
-            transition: all 0.3s var(--transition-smooth);
-        }
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(43, 41, 38, 0.1);
-        }
-        .quote-icon {
-            font-size: 3.5rem; color: var(--marble-gold); opacity: 0.3;
-            line-height: 1; margin-bottom: 0.8rem;
-        }
-        .testimonial-text {
-            font-size: 1rem; color: var(--marble-dark); line-height: 1.8;
-            margin-bottom: 1.5rem; font-style: italic;
-        }
-        .testimonial-author { font-weight: 600; color: var(--marble-charcoal); }
-        .testimonial-role { color: var(--marble-gold); font-size: 0.85rem; }
+        .value-text { font-size: 0.9rem; }
+        .value-text strong { display: block; color: var(--marble-charcoal); margin-bottom: 0.15rem; }
+        .value-text span { color: var(--marble-dark); font-size: 0.82rem; }
 
         /* ─── FAQ ─── */
-        .faq { padding: 6rem 3rem; }
+        .faq {
+            padding: 6rem 3rem;
+            background: linear-gradient(180deg, rgba(237, 233, 228, 0.3) 0%, transparent 100%);
+        }
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-item {
             border: 1px solid rgba(184, 149, 106, 0.2);
@@ -505,29 +622,29 @@
             padding: 1.5rem 2rem; cursor: pointer;
             display: flex; justify-content: space-between; align-items: center;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem; font-weight: 600;
+            font-size: 1.2rem; font-weight: 600;
             color: var(--marble-charcoal);
             transition: all 0.3s;
             background: none; border: none; width: 100%; text-align: left;
         }
         .faq-question:hover { color: var(--marble-gold); }
         .faq-toggle {
-            width: 30px; height: 30px; min-width: 30px;
+            width: 28px; height: 28px; min-width: 28px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--marble-gold), var(--marble-gold-light));
             display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 1.2rem; font-weight: 300;
+            color: white; font-size: 1.1rem; font-weight: 300;
             transition: transform 0.3s var(--transition-smooth);
         }
         .faq-item.active .faq-toggle { transform: rotate(45deg); }
         .faq-answer {
             max-height: 0; overflow: hidden;
-            transition: max-height 0.4s var(--transition-smooth), padding 0.4s;
+            transition: max-height 0.4s var(--transition-smooth);
         }
-        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-item.active .faq-answer { max-height: 400px; }
         .faq-answer-inner {
             padding: 0 2rem 1.5rem;
-            color: var(--marble-dark); line-height: 1.8; font-size: 0.95rem;
+            color: var(--marble-dark); line-height: 1.8; font-size: 0.9rem;
         }
 
         /* ─── CTA ─── */
@@ -547,12 +664,12 @@
             max-width: 800px; margin: 0 auto; position: relative; z-index: 2;
         }
         .cta-section h2 {
-            font-size: 3.2rem; color: var(--marble-white); margin-bottom: 1.5rem;
+            font-size: 3rem; color: var(--marble-white); margin-bottom: 1.5rem;
         }
         .cta-section p {
-            font-size: 1.2rem; color: var(--marble-cream); margin-bottom: 2.5rem;
+            font-size: 1.15rem; color: var(--marble-cream); margin-bottom: 2.5rem; line-height: 1.8;
         }
-        .cta-section .cta-button { font-size: 1.1rem; padding: 1.2rem 3rem; }
+        .cta-section .cta-button { font-size: 1rem; padding: 1.1rem 3rem; }
 
         /* ─── FOOTER ─── */
         footer {
@@ -566,33 +683,40 @@
         }
         .footer-logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem; font-weight: 700;
-            color: var(--marble-gold); margin-bottom: 1rem;
+            font-size: 2.2rem; font-weight: 700;
+            color: var(--marble-gold); margin-bottom: 1rem; letter-spacing: 2px;
         }
         .footer-section h4 {
             color: var(--marble-gold); margin-bottom: 1.5rem; font-size: 1.2rem;
         }
         .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links li { margin-bottom: 0.7rem; }
         .footer-links a {
             color: var(--marble-cream); text-decoration: none;
             transition: color 0.3s var(--transition-smooth);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
         .footer-links a:hover { color: var(--marble-gold); }
         .footer-bottom {
             border-top: 1px solid rgba(184, 149, 106, 0.2);
             padding-top: 2rem; text-align: center; color: var(--marble-grey);
+            font-size: 0.9rem;
         }
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1024px) {
             .hero-content { grid-template-columns: 1fr; text-align: center; }
-            .hero-text h1 { font-size: 3.2rem; }
+            .hero-text h1 { font-size: 3rem; }
             .hero-buttons { justify-content: center; }
-            .services-grid, .cases-grid, .benefits-grid, .testimonial-container { grid-template-columns: 1fr 1fr; }
+            .hero-lead { font-size: 1.1rem; }
+            .problem-card { grid-template-columns: 1fr; }
+            .problem-left { border-right: none; border-bottom: 1px solid rgba(184,149,106,0.1); }
+            .who-grid { grid-template-columns: 1fr; }
+            .cases-grid { grid-template-columns: 1fr 1fr; }
+            .expect-grid { grid-template-columns: 1fr 1fr; }
             .about-container { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr 1fr; }
+            .philosophy-statement { font-size: 2rem; }
         }
 
         @media (max-width: 768px) {
@@ -606,15 +730,17 @@
                 border-bottom: 1px solid rgba(184, 149, 106, 0.2);
             }
             .hero { padding: 7rem 1.5rem 3rem; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .section-title { font-size: 2.3rem; }
-            .services-grid, .cases-grid, .benefits-grid, .testimonial-container { grid-template-columns: 1fr; }
-            .stat-grid { grid-template-columns: 1fr 1fr; }
+            .hero-text h1 { font-size: 2.3rem; }
+            .section-title { font-size: 2.2rem; }
+            .cases-grid, .expect-grid { grid-template-columns: 1fr; }
             .values-grid { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; }
-            .services, .process, .case-studies, .benefits, .about, .testimonials, .faq, .cta-section { padding: 4rem 1.5rem; }
+            .problems, .process, .case-studies, .about, .expect, .faq, .cta-section, .philosophy, .who-we-help { padding: 4rem 1.5rem; }
             .process-step { gap: 1.5rem; }
             .process-number { width: 60px; height: 60px; min-width: 60px; font-size: 1.4rem; }
+            .philosophy-statement { font-size: 1.6rem; }
+            .problem-left, .problem-right { padding: 2rem; }
+            .logo-bar-logos { gap: 2rem; }
         }
     </style>
 </head>
@@ -629,12 +755,12 @@
             </button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#who">Who We Help</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="cta-button">Get Started</a></li>
+                <li><a href="#contact" class="cta-button">Book a Call</a></li>
             </ul>
         </div>
     </nav>
@@ -643,32 +769,44 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>We Build Websites That<br><span>Grow Your</span><br><span>Business</span></h1>
-                <p>We don't just build beautiful websites — we provide the strategy, consulting, and technical expertise to make sure your online presence actually drives results. From custom development to software consulting, we align every decision with your business goals.</p>
+                <span class="eyebrow">For Clinics & Tradespeople in London</span>
+                <h1>More Customers. <span>Higher Rankings.</span> Less Admin.</h1>
+                <p class="hero-lead">We help clinics and tradespeople in London generate more bookings, rank higher on Google, and automate the admin that slows them down — so they can grow without slowing down.</p>
+                <p>We audit your business, build you a proper website with booking or quote systems and automation built in, then manage your SEO and systems monthly so customers keep finding you. One software consultancy, the thinking and the execution from the same team.</p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="primary-btn">Start Your Project</a>
-                    <a href="#services" class="secondary-btn">How We Help</a>
+                    <a href="#contact" class="primary-btn">Book a Free Review</a>
+                    <a href="#services" class="secondary-btn">See What We Do</a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="marble-card">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--marble-charcoal);">Results That Speak</h3>
-                    <div class="stat-grid">
-                        <div class="stat-item">
-                            <div class="stat-number">97%</div>
-                            <div class="stat-label">Client Satisfaction</div>
+                    <h3 class="hero-card-title">How We Work With You</h3>
+                    <div class="hero-card-item">
+                        <div class="hero-card-num">01</div>
+                        <div>
+                            <strong>Audit Your Business</strong>
+                            <span>We review your online presence, systems, and where you're losing customers</span>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">3x</div>
-                            <div class="stat-label">Avg. Lead Increase</div>
+                    </div>
+                    <div class="hero-card-item">
+                        <div class="hero-card-num">02</div>
+                        <div>
+                            <strong>Build the Solution</strong>
+                            <span>Proper website, booking or quote system, automations — everything tied to growth</span>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="hero-card-item">
+                        <div class="hero-card-num">03</div>
+                        <div>
+                            <strong>Rank on Google</strong>
+                            <span>Ongoing SEO so your business shows up when customers are searching</span>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">24hr</div>
-                            <div class="stat-label">Response Time</div>
+                    </div>
+                    <div class="hero-card-item">
+                        <div class="hero-card-num">04</div>
+                        <div>
+                            <strong>Grow Together</strong>
+                            <span>Monthly support, optimisation, and improvements as your business scales</span>
                         </div>
                     </div>
                 </div>
@@ -676,50 +814,143 @@
         </div>
     </section>
 
-    <!-- Services -->
-    <section class="services" id="services">
+    <!-- Who We Help -->
+    <section class="who-we-help" id="who">
         <div class="section-header">
-            <div class="section-subtitle">What We Do</div>
-            <h2 class="section-title">Development & Consulting</h2>
-            <p class="section-description">We combine hands-on web development with strategic software consulting — so you get a website that looks great and a business strategy that works.</p>
+            <div class="section-subtitle">Who We Help</div>
+            <h2 class="section-title">Two Niches. One Specialty.</h2>
+            <p class="section-description">We focus exclusively on clinics and tradespeople because they share the same core problem — they're great at what they do but invisible to the people searching for them online.</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Web Development</h3>
-                <p>Custom-built websites that are beautiful, fast, and easy to manage. We make sure your site looks professional and works perfectly on every device.</p>
-                <a href="#" class="service-link">Learn More →</a>
+        <div class="who-grid">
+            <div class="who-card">
+                <div class="who-card-label">Niche 01</div>
+                <h3>Clinics</h3>
+                <p>Private practices that need secure booking systems, patient intake forms, automated reminders, and SEO that gets them found for local searches. We build systems that handle the complexity — multiple practitioners, sensitive data, GDPR compliance — so you can focus on patient care.</p>
+                <ul class="who-card-list">
+                    <li>Physiotherapy</li>
+                    <li>Dental</li>
+                    <li>Aesthetic</li>
+                    <li>Chiropractic</li>
+                    <li>Private GPs</li>
+                    <li>Osteopathy</li>
+                </ul>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🎯</div>
-                <h3>Software Strategy</h3>
-                <p>We review your current systems and design a clear roadmap to improve them. Every recommendation is tied to a specific business goal — no wasted effort.</p>
-                <a href="#" class="service-link">Learn More →</a>
+            <div class="who-card">
+                <div class="who-card-label">Niche 02</div>
+                <h3>Tradespeople</h3>
+                <p>Established trades businesses that need to capture leads from Google searches, showcase their work, and look as professional online as they are on the job. We build websites with quote request systems, portfolio galleries, and local SEO that generates real enquiries.</p>
+                <ul class="who-card-list">
+                    <li>Plumbers</li>
+                    <li>Electricians</li>
+                    <li>Builders</li>
+                    <li>Roofers</li>
+                    <li>Heating Engineers</li>
+                    <li>Property Maintenance</li>
+                </ul>
             </div>
-            <div class="service-card">
-                <div class="service-icon">💰</div>
-                <h3>Revenue Optimisation</h3>
-                <p>Already have a website but it's not bringing in customers? We optimise your existing site to convert more visitors into paying customers.</p>
-                <a href="#" class="service-link">Learn More →</a>
+        </div>
+    </section>
+
+    <!-- Logo Bar -->
+    <section class="logo-bar">
+        <div class="logo-bar-inner">
+            <div class="logo-bar-label">Businesses we've worked with</div>
+            <div class="logo-bar-logos">
+                <div class="logo-placeholder">Client 1</div>
+                <div class="logo-placeholder">Client 2</div>
+                <div class="logo-placeholder">Client 3</div>
+                <div class="logo-placeholder">Client 4</div>
+                <div class="logo-placeholder">Client 5</div>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🔒</div>
-                <h3>System Review & Security</h3>
-                <p>A thorough review of your current software systems to find weak points, security risks, and ways to improve performance and efficiency.</p>
-                <a href="#" class="service-link">Learn More →</a>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy">
+        <div class="philosophy-container">
+            <div class="section-subtitle">Our Point of View</div>
+            <p class="philosophy-statement">Most businesses don't have a technology problem. They have a <em>visibility problem</em> that shows up in their technology.</p>
+            <p class="philosophy-detail">We see it every day — clinics with brilliant practitioners who can't be found on Google. Tradespeople with five-star reviews and nowhere to send the people reading them. Businesses losing thousands in missed jobs every month because their online presence doesn't match the quality of their work. We don't just build websites. We figure out exactly why your business is invisible and we fix it — with proper systems, ongoing SEO, and automation that gives you back your week.</p>
+        </div>
+    </section>
+
+    <!-- Problems We Solve -->
+    <section class="problems" id="services">
+        <div class="section-header">
+            <div class="section-subtitle">How We Help</div>
+            <h2 class="section-title">Problems We Solve</h2>
+            <p class="section-description">We don't sell a list of services. We solve specific business problems — and every solution includes strategy, execution, and ongoing support.</p>
+        </div>
+        <div class="problems-grid">
+
+            <div class="problem-card">
+                <div class="problem-left">
+                    <div class="problem-label">The Problem</div>
+                    <h3>"Customers can't find us on Google"</h3>
+                    <p>You're great at what you do but when someone searches for a clinic or a tradesperson in your area, your competitors show up first. You're losing work to businesses with weaker reputations but better online presence.</p>
+                </div>
+                <div class="problem-right">
+                    <div class="solution-label">What We Do</div>
+                    <ul class="solution-items">
+                        <li><span class="solution-check">✓</span> Local SEO strategy for your area and services</li>
+                        <li><span class="solution-check">✓</span> Custom website optimised for Google from day one</li>
+                        <li><span class="solution-check">✓</span> Google Business Profile optimisation</li>
+                        <li><span class="solution-check">✓</span> Ongoing ranking improvements each month</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon">📱</div>
-                <h3>Marketing & SEO</h3>
-                <p>Get found online. We help your business reach more customers and grow through search engine optimisation and digital marketing strategies.</p>
-                <a href="#" class="service-link">Learn More →</a>
+
+            <div class="problem-card">
+                <div class="problem-left">
+                    <div class="problem-label">The Problem</div>
+                    <h3>"We're missing enquiries outside business hours"</h3>
+                    <p>People search for a plumber at 10pm or book a physio on Sunday. Right now you're closed, the phone's off, and they're booking with a competitor who has an online form or booking system.</p>
+                </div>
+                <div class="problem-right">
+                    <div class="solution-label">What We Do</div>
+                    <ul class="solution-items">
+                        <li><span class="solution-check">✓</span> 24/7 online booking for clinics</li>
+                        <li><span class="solution-check">✓</span> Quote request systems for trades</li>
+                        <li><span class="solution-check">✓</span> Automated confirmations and reminders</li>
+                        <li><span class="solution-check">✓</span> Instant notifications when new leads come in</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon">✨</div>
-                <h3>Logo & Branding</h3>
-                <p>Create a memorable brand identity with custom logos and branding that captures what makes your business special and helps you stand out.</p>
-                <a href="#" class="service-link">Learn More →</a>
+
+            <div class="problem-card">
+                <div class="problem-left">
+                    <div class="problem-label">The Problem</div>
+                    <h3>"We're wasting hours on admin and no-shows"</h3>
+                    <p>Your team is manually sending reminders, chasing invoices, copying data between systems, and dealing with missed appointments. Every hour on admin is an hour not spent on paying work.</p>
+                </div>
+                <div class="problem-right">
+                    <div class="solution-label">What We Do</div>
+                    <ul class="solution-items">
+                        <li><span class="solution-check">✓</span> Automated appointment reminders (email + SMS)</li>
+                        <li><span class="solution-check">✓</span> Workflow automation and system integration</li>
+                        <li><span class="solution-check">✓</span> Invoicing and payment automation</li>
+                        <li><span class="solution-check">✓</span> Client and patient management dashboards</li>
+                    </ul>
+                </div>
             </div>
+
+            <div class="problem-card">
+                <div class="problem-left">
+                    <div class="problem-label">The Problem</div>
+                    <h3>"Our website doesn't reflect the quality of our work"</h3>
+                    <p>You've got great reviews, years of experience, and happy clients — but your website is outdated, slow, or non-existent. It's sending the wrong signal to the people who find it.</p>
+                </div>
+                <div class="problem-right">
+                    <div class="solution-label">What We Do</div>
+                    <ul class="solution-items">
+                        <li><span class="solution-check">✓</span> Brand strategy and positioning</li>
+                        <li><span class="solution-check">✓</span> Custom website that matches your reputation</li>
+                        <li><span class="solution-check">✓</span> Portfolio and review showcasing</li>
+                        <li><span class="solution-check">✓</span> Performance and security built in</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -728,49 +959,42 @@
         <div class="section-header">
             <div class="section-subtitle">How We Work</div>
             <h2 class="section-title">Our Process</h2>
-            <p class="section-description">A clear, structured approach from first conversation to final launch — so you always know what's happening and when.</p>
+            <p class="section-description">A clear, structured approach so you always know what's happening and why.</p>
         </div>
         <div class="process-timeline">
             <div class="process-step">
                 <div class="process-number">1</div>
                 <div class="process-content">
-                    <h3>Discovery & Consultation</h3>
-                    <p>We sit down with you to understand your business, your goals, and what's not working right now. We look at your existing systems and identify the biggest opportunities for growth.</p>
+                    <h3>Discovery Call</h3>
+                    <p>A 20-minute conversation about your business, your goals, and what's not working. No sales pitch — just an honest assessment of where you are and where you want to be.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="process-number">2</div>
                 <div class="process-content">
-                    <h3>Strategy & Planning</h3>
-                    <p>Based on what we learn, we create a clear roadmap. This covers everything from the technology we'll use, the timeline, and how each decision ties back to your business goals.</p>
+                    <h3>Free Review & Strategy</h3>
+                    <p>We audit your current setup, analyse your competitors, and show you exactly what's costing you customers. You walk away with a clear picture whether we work together or not.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="process-number">3</div>
                 <div class="process-content">
-                    <h3>Design & Prototyping</h3>
-                    <p>We design your solution so you can see and feel it before we build it. This means no surprises — you'll know exactly what you're getting and can give feedback early.</p>
+                    <h3>Design & Prototype</h3>
+                    <p>You see and interact with the solution before we build it. This stage catches misalignments early and saves time and money down the line.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="process-number">4</div>
                 <div class="process-content">
-                    <h3>Development & Build</h3>
-                    <p>We build your solution in stages, checking in regularly so you can see progress. Every feature is built with performance, security, and scalability in mind.</p>
+                    <h3>Build & Launch</h3>
+                    <p>We develop in stages with regular check-ins. Every feature is tested for performance, security, and usability before it goes live. Launch day is smooth, not stressful.</p>
                 </div>
             </div>
             <div class="process-step">
                 <div class="process-number">5</div>
                 <div class="process-content">
-                    <h3>Testing & Quality Checks</h3>
-                    <p>We rigorously test everything — functionality, speed, security, and user experience — to make sure your solution is solid before it goes live.</p>
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="process-number">6</div>
-                <div class="process-content">
-                    <h3>Launch & Ongoing Support</h3>
-                    <p>We handle the full launch and stick around to make sure everything runs smoothly. We provide ongoing support, optimisation, and improvements as your business grows.</p>
+                    <h3>Grow & Optimise</h3>
+                    <p>We handle hosting, security, and SEO monthly. You get a report every month showing exactly what we did and how your rankings and bookings are improving.</p>
                 </div>
             </div>
         </div>
@@ -781,121 +1005,113 @@
         <div class="section-header">
             <div class="section-subtitle">Our Work</div>
             <h2 class="section-title">Case Studies</h2>
-            <p class="section-description">Real results for real businesses. Here's how we've helped our clients grow.</p>
+            <p class="section-description">Real problems, real strategy, real results.</p>
         </div>
         <div class="cases-grid">
             <div class="case-card">
                 <div class="case-image">
-                    <div class="case-tag">E-Commerce</div>
-                    <div class="case-image-icon">🛒</div>
-                </div>
-                <div class="case-body">
-                    <h3>Online Fashion Retailer</h3>
-                    <p>Built a modern online store with an optimised checkout flow. The new site made browsing and buying effortless, leading to a significant jump in sales.</p>
-                    <div class="case-metrics">
-                        <div class="metric">
-                            <div class="metric-value">+180%</div>
-                            <div class="metric-label">Online Sales</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">-45%</div>
-                            <div class="metric-label">Cart Abandonment</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">2.1s</div>
-                            <div class="metric-label">Load Time</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-image">
-                    <div class="case-tag">Professional Services</div>
-                    <div class="case-image-icon">💼</div>
-                </div>
-                <div class="case-body">
-                    <h3>Consulting Firm Rebrand</h3>
-                    <p>A complete website rebuild and brand refresh for a growing consulting firm. We reviewed their old systems, modernised their tech stack, and delivered a site that converts.</p>
-                    <div class="case-metrics">
-                        <div class="metric">
-                            <div class="metric-value">+320%</div>
-                            <div class="metric-label">Lead Enquiries</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">+95%</div>
-                            <div class="metric-label">SEO Traffic</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">4 wks</div>
-                            <div class="metric-label">Delivery</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="case-card">
-                <div class="case-image">
-                    <div class="case-tag">Health & Wellness</div>
+                    <div class="case-tag">Clinic</div>
                     <div class="case-image-icon">🏥</div>
                 </div>
                 <div class="case-body">
-                    <h3>Clinic Booking Platform</h3>
-                    <p>Designed a clean, easy-to-navigate website with integrated booking. We also conducted a security audit to protect sensitive patient data.</p>
+                    <div class="case-challenge">The Challenge</div>
+                    <h3>Physiotherapy Clinic Losing Bookings</h3>
+                    <p>A clinic had strong reviews but was losing patients to competitors who ranked higher on Google. No online booking meant enquiries only came in during office hours. We built a booking platform, fixed their SEO, and automated reminders.</p>
                     <div class="case-metrics">
-                        <div class="metric">
-                            <div class="metric-value">+240%</div>
-                            <div class="metric-label">Online Bookings</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">100%</div>
-                            <div class="metric-label">GDPR Compliant</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">-60%</div>
-                            <div class="metric-label">No-Shows</div>
-                        </div>
+                        <div class="metric"><div class="metric-value">+240%</div><div class="metric-label">Bookings</div></div>
+                        <div class="metric"><div class="metric-value">-60%</div><div class="metric-label">No-Shows</div></div>
+                        <div class="metric"><div class="metric-value">Page 1</div><div class="metric-label">Google Rank</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-tag">Trade</div>
+                    <div class="case-image-icon">🔧</div>
+                </div>
+                <div class="case-body">
+                    <div class="case-challenge">The Challenge</div>
+                    <h3>Plumbing Business With No Website</h3>
+                    <p>An established multi-trade business was getting work entirely through word of mouth. Invisible on Google despite 4.8 stars and years of experience. We built a website with a quote request system and targeted local SEO.</p>
+                    <div class="case-metrics">
+                        <div class="metric"><div class="metric-value">+180%</div><div class="metric-label">Enquiries</div></div>
+                        <div class="metric"><div class="metric-value">+£8k</div><div class="metric-label">Monthly Revenue</div></div>
+                        <div class="metric"><div class="metric-value">5 wks</div><div class="metric-label">Delivered</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-tag">Clinic</div>
+                    <div class="case-image-icon">🦷</div>
+                </div>
+                <div class="case-body">
+                    <div class="case-challenge">The Challenge</div>
+                    <h3>Dental Practice With Outdated Systems</h3>
+                    <p>A growing practice had security concerns, manual appointment reminders, and an outdated website that didn't reflect their modern facilities. We ran a full system review, modernised their stack, and built an integrated patient portal.</p>
+                    <div class="case-metrics">
+                        <div class="metric"><div class="metric-value">+150%</div><div class="metric-label">New Patients</div></div>
+                        <div class="metric"><div class="metric-value">100%</div><div class="metric-label">GDPR</div></div>
+                        <div class="metric"><div class="metric-value">-70%</div><div class="metric-label">Admin Time</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-image">
+                    <div class="case-tag">Trade</div>
+                    <div class="case-image-icon">⚡</div>
+                </div>
+                <div class="case-body">
+                    <div class="case-challenge">The Challenge</div>
+                    <h3>Electrician Drowning in Admin</h3>
+                    <p>A busy electrician was handling quotes via text, chasing invoices by email, and losing track of which jobs were scheduled. We built a website with quote request automation, invoicing, and a simple job management dashboard.</p>
+                    <div class="case-metrics">
+                        <div class="metric"><div class="metric-value">-65%</div><div class="metric-label">Admin Time</div></div>
+                        <div class="metric"><div class="metric-value">+90%</div><div class="metric-label">Quote Conversion</div></div>
+                        <div class="metric"><div class="metric-value">+£5k</div><div class="metric-label">Monthly</div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
-    <section class="benefits">
+    <!-- What to Expect -->
+    <section class="expect">
         <div class="section-header">
-            <div class="section-subtitle">Why It Matters</div>
-            <h2 class="section-title">The Benefits of Working With Us</h2>
-            <p class="section-description">When you combine great web development with smart consulting, the results speak for themselves.</p>
+            <div class="section-subtitle">Working With Us</div>
+            <h2 class="section-title">What You Can Expect</h2>
+            <p class="section-description">We hold ourselves to a standard. Here's what every client gets.</p>
         </div>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">🧠</div>
-                <h3>Strategic Expertise</h3>
-                <p>We don't just build — we advise. Every decision is backed by strategy so your investment delivers real returns.</p>
+        <div class="expect-grid">
+            <div class="expect-card">
+                <div class="expect-icon">🧠</div>
+                <h3>Strategy Before Code</h3>
+                <p>We never start building until we understand your business. Every project begins with research, analysis, and a clear plan tied to your goals.</p>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">💷</div>
-                <h3>Cost-Effective</h3>
-                <p>Get agency-quality work without agency prices. We find the smartest solutions that fit your budget.</p>
+            <div class="expect-card">
+                <div class="expect-icon">💬</div>
+                <h3>Plain English, Always</h3>
+                <p>No jargon, no unnecessary complexity. We explain everything clearly so you can make informed decisions about your own technology.</p>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">⚡</div>
-                <h3>Fast Delivery</h3>
-                <p>We respect your time. Clear timelines, regular updates, and on-time delivery every time.</p>
+            <div class="expect-card">
+                <div class="expect-icon">📊</div>
+                <h3>Measurable Outcomes</h3>
+                <p>We define success metrics before we start and send you a monthly report showing exactly how your rankings, bookings, and enquiries are improving.</p>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🔒</div>
-                <h3>Security First</h3>
-                <p>Every project is built with security best practices. We protect your data and your customers' trust.</p>
+            <div class="expect-card">
+                <div class="expect-icon">🔒</div>
+                <h3>Security Built In</h3>
+                <p>Security isn't an afterthought. Every project is built with best practices and GDPR compliance from day one — protecting your data and your customers.</p>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">📈</div>
-                <h3>Built to Scale</h3>
-                <p>Your business will grow — and your website should too. We build solutions that scale with you.</p>
+            <div class="expect-card">
+                <div class="expect-icon">⚡</div>
+                <h3>No Bloat</h3>
+                <p>We don't over-engineer. You get exactly what you need — clean, fast, and maintainable. No paying for features that don't serve you.</p>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🤝</div>
-                <h3>True Partnership</h3>
-                <p>We work alongside your team, not above them. You get a partner who genuinely cares about your success.</p>
+            <div class="expect-card">
+                <div class="expect-icon">🤝</div>
+                <h3>Ongoing Partnership</h3>
+                <p>We don't build and disappear. Hosting, maintenance, security, and SEO are all covered monthly — we're invested in your long-term growth.</p>
             </div>
         </div>
     </section>
@@ -906,36 +1122,37 @@
             <div class="about-image"></div>
             <div class="about-content">
                 <div class="section-subtitle">About Bashua</div>
-                <h2>We Build & We Advise</h2>
-                <p>Bashua is a web development and software consulting team. We create custom-built, functional, and attractive websites — but we go further. We provide the expert guidance businesses need to make smart technology decisions that align with their long-term goals.</p>
-                <p>Whether you need a brand new website, want to improve the one you have, or need someone to review your systems and create a strategy — we make sure every line of code serves a specific business purpose. Your mission is growth; our mission is the technology that makes it possible.</p>
+                <h2>Strategy-Led. Build-Ready.</h2>
+                <p>Bashua is a software consultancy focused exclusively on clinics and tradespeople in London. We help these businesses get more customers, rank higher on Google, and automate the admin that eats up their week — so they can grow without slowing down.</p>
+                <p>We exist because too many businesses get sold technology they don't need by people who don't understand their goals. A clinic doesn't need another template website. A plumber doesn't need another directory listing. They need systems built around how their business actually works, and someone who stays involved to keep improving them.</p>
+                <p>We solve problems by doing, not by theorising. Every recommendation we make, we can build. Every solution we build, we've thought through strategically. That's what makes us different — you get the thinking, the execution, and the ongoing support from the same team.</p>
                 <div class="values-grid">
                     <div class="value-item">
                         <div class="value-check">✓</div>
                         <div class="value-text">
-                            <strong>Results-Driven</strong>
-                            <span>Every project is measured by business impact</span>
+                            <strong>Results Over Output</strong>
+                            <span>We measure success by business impact, not lines of code</span>
                         </div>
                     </div>
                     <div class="value-item">
                         <div class="value-check">✓</div>
                         <div class="value-text">
-                            <strong>Transparent</strong>
-                            <span>No jargon, no hidden costs, no surprises</span>
+                            <strong>Radical Transparency</strong>
+                            <span>No hidden costs, no surprises, no jargon</span>
                         </div>
                     </div>
                     <div class="value-item">
                         <div class="value-check">✓</div>
                         <div class="value-text">
-                            <strong>Quality Obsessed</strong>
-                            <span>We don't cut corners on code or design</span>
+                            <strong>Build What Matters</strong>
+                            <span>Every feature exists for a reason</span>
                         </div>
                     </div>
                     <div class="value-item">
                         <div class="value-check">✓</div>
                         <div class="value-text">
-                            <strong>Client-First</strong>
-                            <span>Your goals drive every decision we make</span>
+                            <strong>Long-Term Thinking</strong>
+                            <span>Solutions that scale with your business</span>
                         </div>
                     </div>
                 </div>
@@ -944,48 +1161,56 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="section-header">
-            <div class="section-subtitle">Testimonials</div>
-            <h2 class="section-title">What Clients Say</h2>
-        </div>
-        <div class="testimonial-container">
-            <div class="testimonial-card">
-                <div class="quote-icon">"</div>
-                <p class="testimonial-text">Bashua didn't just build us a website — they helped us rethink our entire online strategy. We're getting more leads than ever and the site practically runs itself.</p>
-                <div class="testimonial-author">Sarah Chen</div>
-                <div class="testimonial-role">Owner, Local Boutique</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="quote-icon">"</div>
-                <p class="testimonial-text">They reviewed our old systems, found the bottlenecks, and rebuilt everything properly. The process was clear and the results were immediate.</p>
-                <div class="testimonial-author">Michael Roberts</div>
-                <div class="testimonial-role">Director, Home Services Co.</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="quote-icon">"</div>
-                <p class="testimonial-text">Best investment we made for our business. They combined the website build with proper consulting — the kind of strategic thinking you usually only get from expensive agencies.</p>
-                <div class="testimonial-author">Jennifer Martinez</div>
-                <div class="testimonial-role">Founder, Consulting Firm</div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="section-header">
-            <div class="section-subtitle">Common Questions</div>
+            <div class="section-subtitle">Questions</div>
             <h2 class="section-title">Frequently Asked</h2>
         </div>
         <div class="faq-container">
             <div class="faq-item">
                 <button class="faq-question">
-                    What's the difference between web development and consulting?
+                    Why only clinics and tradespeople?
                     <span class="faq-toggle">+</span>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">Web development is the actual building of your website. Consulting is the strategic side — reviewing your current systems, identifying what's working and what's not, and creating a plan to improve things. We offer both, which means you get a website that's not just well-built but strategically sound.</div>
+                    <div class="faq-answer-inner">Because focus matters. By working only with clinics and tradespeople, we deeply understand your specific challenges — complex booking, patient data, local SEO, quote systems, emergency availability, GDPR compliance. We're not trying to serve everyone. We're building expertise in the problems that matter to you.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What makes you different from a regular web developer?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">A web developer builds what you ask for. We help you figure out what to ask for in the first place. We start with your business goals and work backwards to the technology — which means you end up with something that actually drives results, not just something that looks good.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Can't AI just build my website for free?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">AI can generate a website. But a website isn't your problem — getting found on Google and converting visitors into bookings is. AI doesn't know your business, your competitors, or why patients aren't booking. We don't just build websites — we figure out what your business needs online and make sure it actually works. The building is the easy part. The thinking is what you're paying for.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you handle SEO?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Yes, and it's built into everything we do. Every website we build is optimised for Google from day one — proper structure, meta tags, speed, local SEO, Google Business Profile setup. And we don't stop there — ongoing SEO is part of the monthly retainer, so your rankings keep improving long after launch.</div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What kind of automation do you build?
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">We build practical tools that save you time — online booking systems with automatic reminders, quote request workflows for trades, invoice generation, patient intake forms, client management dashboards, and anything else that replaces manual admin. We identify these opportunities during our audit and build them as part of your engagement.</div>
                 </div>
             </div>
             <div class="faq-item">
@@ -994,25 +1219,7 @@
                     <span class="faq-toggle">+</span>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">Most websites take between 3-6 weeks depending on complexity. A simple business website might be ready in 2-3 weeks, while a more complex project with consulting and custom features could take 6-8 weeks. We'll give you a clear timeline before we start.</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    Do I need consulting, or just a website?
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">It depends on where you are. If you're starting fresh and just need a great website, we can do that. But if you already have systems in place that aren't performing, or you want to make sure your tech decisions align with your business goals, consulting will save you time and money in the long run.</div>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">
-                    What does a system review involve?
-                    <span class="faq-toggle">+</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">We look at your current website, software, and digital tools. We check for security risks, performance issues, user experience problems, and anything that's slowing your business down. You'll get a clear report with prioritised recommendations you can act on.</div>
+                    <div class="faq-answer-inner">A straightforward website build takes 3-4 weeks. Projects that include booking platforms, patient portals, or advanced automation take 5-8 weeks. We'll give you a clear, honest timeline before we start — and we stick to it.</div>
                 </div>
             </div>
             <div class="faq-item">
@@ -1021,16 +1228,16 @@
                     <span class="faq-toggle">+</span>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">Every project is different, so we quote based on your specific needs. We're upfront about pricing — no hidden fees or surprise costs. Get in touch and we'll give you a clear breakdown before any work begins.</div>
+                    <div class="faq-answer-inner">Every project is scoped individually based on your needs. Website builds typically start from £3,000 and go up based on complexity. The monthly retainer covers hosting, maintenance, security, backups, ongoing SEO, and support — typically £200-£500/month. You'll get a clear breakdown before any work begins, and there are no hidden fees.</div>
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question">
-                    Do you offer ongoing support after launch?
+                    Do you provide support after launch?
                     <span class="faq-toggle">+</span>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-inner">Yes. We offer maintenance packages that include regular updates, security monitoring, performance checks, and content updates. We don't just build and disappear — we stick around to make sure your site keeps performing.</div>
+                    <div class="faq-answer-inner">Yes. Every project includes ongoing support as part of the monthly retainer — hosting, security updates, performance monitoring, SEO improvements, and a monthly report showing exactly what we did and how your business is performing. We're invested in your long-term growth, not just the initial build.</div>
                 </div>
             </div>
         </div>
@@ -1039,9 +1246,9 @@
     <!-- CTA -->
     <section class="cta-section" id="contact">
         <div class="cta-content">
-            <h2>Ready to Build Something That Works?</h2>
-            <p>Whether you need a new website, a strategy review, or both — let's have a conversation about how we can help your business grow.</p>
-            <a href="#" class="cta-button">Start Your Project</a>
+            <h2>Let's Talk About Your Business</h2>
+            <p>Book a free 20-minute review. We'll look at your online setup, show you exactly what's costing you customers, and tell you what we'd do about it. No pressure, no sales pitch. If it's useful, great. If not, you walk away with clarity.</p>
+            <a href="#" class="cta-button">Book a Free Review</a>
         </div>
     </section>
 
@@ -1050,37 +1257,36 @@
         <div class="footer-content">
             <div>
                 <div class="footer-logo">BASHUA</div>
-                <p style="margin-top: 1rem; line-height: 1.8; font-size: 0.95rem;">We build beautiful, functional websites and provide the strategic consulting to make sure your technology drives real business growth.</p>
+                <p style="margin-top: 1rem; line-height: 1.8; font-size: 0.9rem;">Software consultancy helping clinics and tradespeople in London get more customers online, rank higher on Google, and automate the admin that slows them down. Custom websites, booking and quote systems, and ongoing SEO — all under one roof.</p>
             </div>
             <div class="footer-section">
-                <h4>Quick Links</h4>
+                <h4>Navigate</h4>
                 <ul class="footer-links">
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#who">Who We Help</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#process">Process</a></li>
                     <li><a href="#work">Work</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Services</h4>
+                <h4>We Help With</h4>
                 <ul class="footer-links">
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Software Consulting</a></li>
-                    <li><a href="#">Revenue Optimisation</a></li>
-                    <li><a href="#">System Review</a></li>
-                    <li><a href="#">Marketing & SEO</a></li>
-                    <li><a href="#">Branding</a></li>
+                    <li><a href="#">Clinic Websites</a></li>
+                    <li><a href="#">Trade Websites</a></li>
+                    <li><a href="#">Booking & Quote Systems</a></li>
+                    <li><a href="#">SEO & Local Search</a></li>
+                    <li><a href="#">Workflow Automation</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Contact</h4>
                 <ul class="footer-links">
-                    <li><a href="mailto:hello@bashua.com">hello@bashua.com</a></li>
+                    <li><a href="mailto:hello@bashua.co.uk">hello@bashua.co.uk</a></li>
                     <li><a href="tel:+44">+44 (0) XXX XXXX</a></li>
                     <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
                 </ul>
             </div>
         </div>
@@ -1090,22 +1296,20 @@
     </footer>
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.querySelector('.nav-links').classList.remove('active');
             });
         });
 
-        // Nav scroll effect
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 100);
         });
 
-        // FAQ accordion
         document.querySelectorAll('.faq-question').forEach(btn => {
             btn.addEventListener('click', () => {
                 const item = btn.parentElement;
@@ -1115,7 +1319,6 @@
             });
         });
 
-        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1123,11 +1326,11 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-        document.querySelectorAll('.service-card, .case-card, .benefit-card, .testimonial-card, .process-step, .faq-item').forEach(el => {
+        document.querySelectorAll('.problem-card, .case-card, .expect-card, .process-step, .faq-item, .value-item, .who-card').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
+            el.style.transform = 'translateY(25px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
